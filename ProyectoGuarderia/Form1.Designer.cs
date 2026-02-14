@@ -59,7 +59,7 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panelMenu.BackColor = System.Drawing.Color.Cyan;
             this.panelMenu.Controls.Add(this.btnAyuda);
             this.panelMenu.Controls.Add(this.btnDomicilio);
             this.panelMenu.Controls.Add(this.btnPagos);
@@ -95,14 +95,14 @@
             // labelDivicion
             // 
             this.labelDivicion.AutoSize = true;
-            this.labelDivicion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.labelDivicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDivicion.BackColor = System.Drawing.Color.Cyan;
+            this.labelDivicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDivicion.ForeColor = System.Drawing.Color.White;
-            this.labelDivicion.Location = new System.Drawing.Point(-7, 115);
+            this.labelDivicion.Location = new System.Drawing.Point(-5, 129);
             this.labelDivicion.Name = "labelDivicion";
-            this.labelDivicion.Size = new System.Drawing.Size(584, 40);
+            this.labelDivicion.Size = new System.Drawing.Size(623, 26);
             this.labelDivicion.TabIndex = 1;
-            this.labelDivicion.Text = "___________________________";
+            this.labelDivicion.Text = "_______________________________________________";
             this.labelDivicion.Click += new System.EventHandler(this.labelDivicion_Click);
             // 
             // btnAyuda
@@ -201,9 +201,11 @@
             // 
             // pcLogo
             // 
+            this.pcLogo.Image = global::ProyectoGuarderia.Properties.Resources.guarderia;
             this.pcLogo.Location = new System.Drawing.Point(12, 12);
             this.pcLogo.Name = "pcLogo";
-            this.pcLogo.Size = new System.Drawing.Size(293, 130);
+            this.pcLogo.Size = new System.Drawing.Size(302, 128);
+            this.pcLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcLogo.TabIndex = 0;
             this.pcLogo.TabStop = false;
             // 
