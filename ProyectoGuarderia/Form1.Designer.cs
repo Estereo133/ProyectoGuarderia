@@ -182,6 +182,7 @@
             this.btnPadres.TabIndex = 1;
             this.btnPadres.Text = "Padres";
             this.btnPadres.UseVisualStyleBackColor = true;
+            this.btnPadres.Click += new System.EventHandler(this.btnPadres_Click);
             // 
             // btnNiños
             // 
@@ -198,6 +199,7 @@
             this.btnNiños.TabIndex = 0;
             this.btnNiños.Text = "Niños";
             this.btnNiños.UseVisualStyleBackColor = true;
+            this.btnNiños.Click += new System.EventHandler(this.btnNiños_Click);
             // 
             // pcLogo
             // 

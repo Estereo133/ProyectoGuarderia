@@ -27,5 +27,27 @@ namespace ProyectoGuarderia
         {
 
         }
+
+        private void btnNiños_Click(object sender, EventArgs e)
+        {
+            // Oculta el menú y abre Form_Niños
+            // Al cerrar Form_Niños se vuelve a mostrar el menú.
+            this.Hide();
+            using (var formNiños = new Form_Niños())
+            {
+                formNiños.ShowDialog();
+            }
+            this.Show();
+        }
+
+        private void btnPadres_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (var formPadres = new Form_Padres())
+            {
+                formPadres.ShowDialog();
+            }
+            this.Show();
+        }
     }
 }
