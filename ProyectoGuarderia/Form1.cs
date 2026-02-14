@@ -22,5 +22,10 @@ namespace ProyectoGuarderia
         {
 
         }
+
+        private void labelDivicion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
