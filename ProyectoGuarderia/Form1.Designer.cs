@@ -30,6 +30,12 @@
         {
             this.lbl_Menu = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.panelApp = new System.Windows.Forms.Panel();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.pcLogo = new System.Windows.Forms.PictureBox();
+            this.panelMenu.SuspendLayout();
+            this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Menu
@@ -46,17 +52,45 @@
             // 
             // panelMenu
             // 
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(359, 1050);
+            this.panelMenu.Size = new System.Drawing.Size(320, 1050);
             this.panelMenu.TabIndex = 1;
+            // 
+            // panelApp
+            // 
+            this.panelApp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelApp.Location = new System.Drawing.Point(320, 0);
+            this.panelApp.Name = "panelApp";
+            this.panelApp.Size = new System.Drawing.Size(1604, 1050);
+            this.panelApp.TabIndex = 2;
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.pcLogo);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(320, 155);
+            this.panelLogo.TabIndex = 0;
+            // 
+            // pcLogo
+            // 
+            this.pcLogo.Location = new System.Drawing.Point(12, 12);
+            this.pcLogo.Name = "pcLogo";
+            this.pcLogo.Size = new System.Drawing.Size(293, 130);
+            this.pcLogo.TabIndex = 0;
+            this.pcLogo.TabStop = false;
             // 
             // Form_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(29F, 55F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1050);
+            this.Controls.Add(this.panelApp);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.lbl_Menu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -66,6 +100,9 @@
             this.Name = "Form_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.panelMenu.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -75,6 +112,9 @@
 
         private System.Windows.Forms.Label lbl_Menu;
         private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.Panel panelLogo;
+        private System.Windows.Forms.Panel panelApp;
+        private System.Windows.Forms.PictureBox pcLogo;
     }
 }
 
