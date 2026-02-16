@@ -45,10 +45,13 @@ namespace ProyectoGuarderia
         {
             this.Hide();
             using (var formPadres = new Form_Padres())
+
+
             {
                 formPadres.ShowDialog();
             }
             this.Show();
         }
+        /
     }
 }
