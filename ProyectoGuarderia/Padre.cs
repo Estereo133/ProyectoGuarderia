@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
+using System.IO; // Necesario para manejar archivos
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +25,7 @@ namespace ProyectoGuarderia
                "Subir Imagen",
                MessageBoxButtons.YesNo,
                MessageBoxIcon.Question);
+
             if (result == DialogResult.Yes)
             {
                 OpenFileDialog ofd = new OpenFileDialog();
@@ -32,10 +33,10 @@ namespace ProyectoGuarderia
 
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    // Ruta fija que definiste
-                    string carpeta = @"C:\Users\Jeremy Shafikc\source\repos\BuscDocMultiHilos\bin\Release\ImagenesPadres";
+                    // Carpeta relativa dentro de la aplicación
+                    string carpeta = Path.Combine(Application.StartupPath, "ImagenesPadres");
 
-                    // Crear la carpeta si no existe (aunque ya la tienes)
+                    // Crear la carpeta si no existe
                     Directory.CreateDirectory(carpeta);
 
                     // Generar un nombre único para la imagen
@@ -58,5 +59,12 @@ namespace ProyectoGuarderia
         {
             this.Close();
         }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e) { }
+        private void txtAmaterno_TextChanged(object sender, EventArgs e) { }
+        private void txtApaterno_TextChanged(object sender, EventArgs e) { }
+        private void txtTelefono_TextChanged(object sender, EventArgs e) { }
+        private void txtOcupacion_TextChanged(object sender, EventArgs e) { }
+        private void txtGradoEstudios_TextChanged(object sender, EventArgs e) { }
     }
 }

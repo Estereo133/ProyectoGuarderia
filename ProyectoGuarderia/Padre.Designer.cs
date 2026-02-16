@@ -74,6 +74,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(458, 39);
             this.txtNombre.TabIndex = 5;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // lblNombre
             // 
@@ -102,6 +103,7 @@
             this.txtAmaterno.Name = "txtAmaterno";
             this.txtAmaterno.Size = new System.Drawing.Size(458, 39);
             this.txtAmaterno.TabIndex = 7;
+            this.txtAmaterno.TextChanged += new System.EventHandler(this.txtAmaterno_TextChanged);
             // 
             // lblApaterno
             // 
@@ -120,6 +122,7 @@
             this.txtApaterno.Name = "txtApaterno";
             this.txtApaterno.Size = new System.Drawing.Size(458, 39);
             this.txtApaterno.TabIndex = 9;
+            this.txtApaterno.TextChanged += new System.EventHandler(this.txtApaterno_TextChanged);
             // 
             // lblTelefono
             // 
@@ -138,6 +141,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(458, 39);
             this.txtTelefono.TabIndex = 11;
+            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
             // 
             // lblOcupacion
             // 
@@ -156,6 +160,7 @@
             this.txtOcupacion.Name = "txtOcupacion";
             this.txtOcupacion.Size = new System.Drawing.Size(458, 39);
             this.txtOcupacion.TabIndex = 13;
+            this.txtOcupacion.TextChanged += new System.EventHandler(this.txtOcupacion_TextChanged);
             // 
             // lblGradoEstudios
             // 
@@ -174,6 +179,7 @@
             this.txtGradoEstudios.Name = "txtGradoEstudios";
             this.txtGradoEstudios.Size = new System.Drawing.Size(458, 39);
             this.txtGradoEstudios.TabIndex = 15;
+            this.txtGradoEstudios.TextChanged += new System.EventHandler(this.txtGradoEstudios_TextChanged);
             // 
             // Form_Padre
             // 
