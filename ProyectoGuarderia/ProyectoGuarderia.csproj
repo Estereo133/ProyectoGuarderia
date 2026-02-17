@@ -96,6 +96,12 @@
     <Compile Include="Tutores.Designer.cs">
       <DependentUpon>Tutores.cs</DependentUpon>
     </Compile>
+    <Compile Include="TutoresPr2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TutoresPr2.Designer.cs">
+      <DependentUpon>TutoresPr2.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Domicilio.resx">
       <DependentUpon>Domicilio.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +136,9 @@
     <EmbeddedResource Include="Tutores.resx">
       <DependentUpon>Tutores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TutoresPr2.resx">
+      <DependentUpon>TutoresPr2.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -160,6 +169,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\guarderia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circulo-negro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

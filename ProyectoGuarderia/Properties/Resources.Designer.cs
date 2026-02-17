@@ -83,6 +83,16 @@ namespace ProyectoGuarderia.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap circulo_negro {
+            get {
+                object obj = ResourceManager.GetObject("circulo-negro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap guarderia {
             get {
                 object obj = ResourceManager.GetObject("guarderia", resourceCulture);
@@ -96,6 +106,16 @@ namespace ProyectoGuarderia.Properties {
         internal static System.Drawing.Bitmap mano {
             get {
                 object obj = ResourceManager.GetObject("mano", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menu__1_ {
+            get {
+                object obj = ResourceManager.GetObject("menu (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

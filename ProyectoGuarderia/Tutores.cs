@@ -27,7 +27,7 @@ namespace ProyectoGuarderia
         {
             if (menuExpand == false)
             {
-                MenuPruebas.Height += 100;
+                MenuPruebas.Height += 70;
                 if (MenuPruebas.Height >= 154)
                 {
                     menuTimer.Stop();
@@ -37,7 +37,7 @@ namespace ProyectoGuarderia
             }
             else
             {
-                MenuPruebas.Height -= 100;
+                MenuPruebas.Height -= 70;
                 if (MenuPruebas.Height <=44 ) {
                     menuTimer.Stop();
                     menuExpand = false;
@@ -51,5 +51,7 @@ namespace ProyectoGuarderia
         {
             menuTimer.Start();
         }
+
+        
     }
 }
