@@ -49,6 +49,22 @@ namespace ProyectoGuarderia
             }
             this.Show();
         }
+
+
+        private void panelApp_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnTutores_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (var formTutores = new Form_Tutores())
+            {
+                formTutores.ShowDialog();
+            }
+            this.Show();
+        }
     }
 
 

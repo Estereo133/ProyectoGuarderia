@@ -16,5 +16,40 @@ namespace ProyectoGuarderia
         {
             InitializeComponent();
         }
+
+        private void Form_Tutores_Load(object sender, EventArgs e)
+        {
+
+        }
+        bool menuExpand = false;
+
+        private void menuTimer_Tick(object sender, EventArgs e)
+        {
+            if (menuExpand == false)
+            {
+                MenuPruebas.Height += 10;
+                if (MenuPruebas.Height >= 154)
+                {
+                    menuTimer.Stop();
+                    menuExpand = true;
+
+                }
+            }
+            else
+            {
+                MenuPruebas.Height -= 10;
+                if (MenuPruebas.Height <=44 ) {
+                    menuTimer.Stop();
+                    menuExpand = false;
+                
+                }
+            }
+
+        }
+
+        private void MenuTutor_Click(object sender, EventArgs e)
+        {
+            menuTimer.Start();
+        }
     }
 }
