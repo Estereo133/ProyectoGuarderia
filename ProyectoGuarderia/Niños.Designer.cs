@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnAgregarNiño = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSalir
@@ -42,10 +43,21 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnAgregarNiño
+            // 
+            this.btnAgregarNiño.Location = new System.Drawing.Point(930, 532);
+            this.btnAgregarNiño.Name = "btnAgregarNiño";
+            this.btnAgregarNiño.Size = new System.Drawing.Size(142, 72);
+            this.btnAgregarNiño.TabIndex = 7;
+            this.btnAgregarNiño.Text = "Agregar Niño";
+            this.btnAgregarNiño.UseVisualStyleBackColor = true;
+            this.btnAgregarNiño.Click += new System.EventHandler(this.btnAgregarNiño_Click);
+            // 
             // Form_Niños
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1199, 616);
+            this.Controls.Add(this.btnAgregarNiño);
             this.Controls.Add(this.btnSalir);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form_Niños";
@@ -58,5 +70,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnAgregarNiño;
     }
 }

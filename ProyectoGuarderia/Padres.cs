@@ -40,14 +40,19 @@ namespace ProyectoGuarderia
 
         private void btnAgregarPadre_Click(object sender, EventArgs e)
         {
-            // Oculta el menú y abre Form_Niños
-            // Al cerrar Form_Niños se vuelve a mostrar el menú.
-            this.Hide();
-            using (var formPadre = new Form_Padre())
-            {
-                formPadre.ShowDialog();
-            }
-            this.Show();
+            //// Oculta el menú y abre Form_Niños
+            //// Al cerrar Form_Niños se vuelve a mostrar el menú.
+            //this.Hide();
+            //using (var formPadre = new Form_Padre())
+            //{
+            //    formPadre.ShowDialog();
+            //}
+            //this.Show();
+        }
+
+        private void Form_Padres_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

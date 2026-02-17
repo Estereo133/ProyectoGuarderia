@@ -26,5 +26,22 @@ namespace ProyectoGuarderia
             // Cierra este formulario y el FormClosed en el menú se encargará de mostrarlo otra vez
             this.Close();
         }
+
+        private void btnAgregarPadre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregarNiño_Click(object sender, EventArgs e)
+        {
+            // Oculta el menú y abre Form_Niño
+            // Al cerrar Form_Niño se vuelve a mostrar el menú.
+            this.Hide();
+            using (var formNiño = new Form_Niño())
+            {
+                formNiño.ShowDialog();
+            }
+            this.Show();
+        }
     }
 }
