@@ -56,7 +56,7 @@
             this.lbl_Menu.Location = new System.Drawing.Point(-2, -3);
             this.lbl_Menu.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.lbl_Menu.Name = "lbl_Menu";
-            this.lbl_Menu.Size = new System.Drawing.Size(149, 55);
+            this.lbl_Menu.Size = new System.Drawing.Size(219, 82);
             this.lbl_Menu.TabIndex = 0;
             this.lbl_Menu.Text = "Menu";
             this.lbl_Menu.Click += new System.EventHandler(this.lbl_Menu_Click);
@@ -195,7 +195,7 @@
             this.labelDivicion.ForeColor = System.Drawing.Color.White;
             this.labelDivicion.Location = new System.Drawing.Point(-5, 129);
             this.labelDivicion.Name = "labelDivicion";
-            this.labelDivicion.Size = new System.Drawing.Size(431, 18);
+            this.labelDivicion.Size = new System.Drawing.Size(623, 26);
             this.labelDivicion.TabIndex = 1;
             this.labelDivicion.Text = "_______________________________________________";
             this.labelDivicion.Click += new System.EventHandler(this.labelDivicion_Click);
@@ -247,6 +247,7 @@
             this.Name = "Form_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Form_Menu_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();

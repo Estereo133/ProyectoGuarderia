@@ -88,6 +88,11 @@ namespace ProyectoGuarderia
             }
             this.Show();
         }
+
+        private void Form_Menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 
