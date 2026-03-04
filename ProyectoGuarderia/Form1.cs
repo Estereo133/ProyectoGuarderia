@@ -65,7 +65,30 @@ namespace ProyectoGuarderia
             }
             this.Show();
         }
+
+        private void btnDomicilio_Click(object sender, EventArgs e)
+        {
+            
+            new Form_Busqueda().ShowDialog();
+        }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnPagos_Click(object sender, EventArgs e)
+        {
+            // Oculta el menú y abre Form_Niños
+            // Al cerrar Form_Niños se vuelve a mostrar el menú.
+            this.Hide();
+            using (var formPagos = new Form_Pagos())
+            {
+                formPagos.ShowDialog();
+            }
+            this.Show();
+        }
+    }
     }
 
 
-}

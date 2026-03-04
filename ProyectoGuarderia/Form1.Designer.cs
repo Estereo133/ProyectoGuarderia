@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Menu));
             this.lbl_Menu = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnAyuda = new System.Windows.Forms.Button();
@@ -40,9 +41,12 @@
             this.labelDivicion = new System.Windows.Forms.Label();
             this.pcLogo = new System.Windows.Forms.PictureBox();
             this.panelApp = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcLogo)).BeginInit();
+            this.panelApp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Menu
@@ -52,7 +56,7 @@
             this.lbl_Menu.Location = new System.Drawing.Point(-2, -3);
             this.lbl_Menu.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.lbl_Menu.Name = "lbl_Menu";
-            this.lbl_Menu.Size = new System.Drawing.Size(219, 82);
+            this.lbl_Menu.Size = new System.Drawing.Size(149, 55);
             this.lbl_Menu.TabIndex = 0;
             this.lbl_Menu.Text = "Menu";
             this.lbl_Menu.Click += new System.EventHandler(this.lbl_Menu_Click);
@@ -70,7 +74,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(320, 616);
+            this.panelMenu.Size = new System.Drawing.Size(320, 460);
             this.panelMenu.TabIndex = 1;
             // 
             // btnAyuda
@@ -80,12 +84,13 @@
             this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAyuda.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAyuda.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAyuda.Location = new System.Drawing.Point(0, 572);
+            this.btnAyuda.Location = new System.Drawing.Point(0, 416);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Size = new System.Drawing.Size(320, 44);
             this.btnAyuda.TabIndex = 5;
-            this.btnAyuda.Text = "Ayuda";
+            this.btnAyuda.Text = "Salir";
             this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
             // btnDomicilio
             // 
@@ -100,8 +105,9 @@
             this.btnDomicilio.Name = "btnDomicilio";
             this.btnDomicilio.Size = new System.Drawing.Size(320, 44);
             this.btnDomicilio.TabIndex = 4;
-            this.btnDomicilio.Text = "Domicilio";
+            this.btnDomicilio.Text = "Busqueda";
             this.btnDomicilio.UseVisualStyleBackColor = true;
+            this.btnDomicilio.Click += new System.EventHandler(this.btnDomicilio_Click);
             // 
             // btnPagos
             // 
@@ -118,6 +124,7 @@
             this.btnPagos.TabIndex = 3;
             this.btnPagos.Text = "Pagos";
             this.btnPagos.UseVisualStyleBackColor = true;
+            this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click);
             // 
             // btnTutores
             // 
@@ -188,7 +195,7 @@
             this.labelDivicion.ForeColor = System.Drawing.Color.White;
             this.labelDivicion.Location = new System.Drawing.Point(-5, 129);
             this.labelDivicion.Name = "labelDivicion";
-            this.labelDivicion.Size = new System.Drawing.Size(623, 26);
+            this.labelDivicion.Size = new System.Drawing.Size(431, 18);
             this.labelDivicion.TabIndex = 1;
             this.labelDivicion.Text = "_______________________________________________";
             this.labelDivicion.Click += new System.EventHandler(this.labelDivicion_Click);
@@ -206,23 +213,35 @@
             // panelApp
             // 
             this.panelApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(222)))));
+            this.panelApp.Controls.Add(this.pictureBox1);
             this.panelApp.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelApp.Location = new System.Drawing.Point(320, 0);
             this.panelApp.Name = "panelApp";
-            this.panelApp.Size = new System.Drawing.Size(879, 616);
+            this.panelApp.Size = new System.Drawing.Size(445, 460);
             this.panelApp.TabIndex = 2;
             this.panelApp.Paint += new System.Windows.Forms.PaintEventHandler(this.panelApp_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(445, 460);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Form_Menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(1199, 616);
+            this.ClientSize = new System.Drawing.Size(765, 460);
             this.Controls.Add(this.panelApp);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.lbl_Menu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(10, 8, 10, 8);
             this.MaximizeBox = false;
             this.Name = "Form_Menu";
@@ -232,6 +251,8 @@
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcLogo)).EndInit();
+            this.panelApp.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,6 +272,7 @@
         private System.Windows.Forms.Button btnTutores;
         private System.Windows.Forms.Button btnPadres;
         private System.Windows.Forms.Button btnAyuda;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

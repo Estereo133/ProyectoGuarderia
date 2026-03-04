@@ -32,27 +32,27 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.MenuPruebas = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.MenuTutor = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.menuTimer = new System.Windows.Forms.Timer(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.menuTimer = new System.Windows.Forms.Timer(this.components);
             this.panel7 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.MenuTutor = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.MenuPruebas.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +68,7 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
-            this.panelMenu.Size = new System.Drawing.Size(227, 441);
+            this.panelMenu.Size = new System.Drawing.Size(227, 345);
             this.panelMenu.TabIndex = 1;
             // 
             // MenuPruebas
@@ -89,6 +89,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 45);
             this.panel2.TabIndex = 2;
+            // 
+            // MenuTutor
+            // 
+            this.MenuTutor.BackColor = System.Drawing.Color.IndianRed;
+            this.MenuTutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MenuTutor.Location = new System.Drawing.Point(-12, -6);
+            this.MenuTutor.Name = "MenuTutor";
+            this.MenuTutor.Size = new System.Drawing.Size(239, 44);
+            this.MenuTutor.TabIndex = 3;
+            this.MenuTutor.Text = "Tutores";
+            this.MenuTutor.UseVisualStyleBackColor = false;
+            this.MenuTutor.Click += new System.EventHandler(this.MenuTutor_Click);
             // 
             // panel5
             // 
@@ -124,28 +136,6 @@
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.button4);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 130);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(227, 45);
-            this.panel6.TabIndex = 6;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.LightCoral;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 30);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(227, 100);
-            this.panel1.TabIndex = 2;
-            // 
-            // menuTimer
-            // 
-            this.menuTimer.Tick += new System.EventHandler(this.menuTimer_Tick);
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.button5);
@@ -166,6 +156,39 @@
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = false;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.button4);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 130);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(227, 45);
+            this.panel6.TabIndex = 6;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.IndianRed;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(-9, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(239, 44);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Menu";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightCoral;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 30);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(227, 100);
+            this.panel1.TabIndex = 2;
+            // 
+            // menuTimer
+            // 
+            this.menuTimer.Tick += new System.EventHandler(this.menuTimer_Tick);
+            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.button1);
@@ -184,29 +207,6 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // MenuTutor
-            // 
-            this.MenuTutor.BackColor = System.Drawing.Color.IndianRed;
-            this.MenuTutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MenuTutor.Location = new System.Drawing.Point(-12, -6);
-            this.MenuTutor.Name = "MenuTutor";
-            this.MenuTutor.Size = new System.Drawing.Size(239, 44);
-            this.MenuTutor.TabIndex = 3;
-            this.MenuTutor.Text = "Tutores";
-            this.MenuTutor.UseVisualStyleBackColor = false;
-            this.MenuTutor.Click += new System.EventHandler(this.MenuTutor_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.IndianRed;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(-9, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(239, 44);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Menu";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(704, 60);
@@ -219,7 +219,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 441);
+            this.ClientSize = new System.Drawing.Size(892, 345);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.pictureBox1);
@@ -232,8 +232,8 @@
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -28,182 +28,196 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pbPadre = new System.Windows.Forms.PictureBox();
-            this.btnSalir = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Padre));
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbNino = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblAmaterno = new System.Windows.Forms.Label();
-            this.txtAmaterno = new System.Windows.Forms.TextBox();
-            this.lblApaterno = new System.Windows.Forms.Label();
-            this.txtApaterno = new System.Windows.Forms.TextBox();
-            this.lblTelefono = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.lblOcupacion = new System.Windows.Forms.Label();
-            this.txtOcupacion = new System.Windows.Forms.TextBox();
-            this.lblGradoEstudios = new System.Windows.Forms.Label();
-            this.txtGradoEstudios = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPadre)).BeginInit();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.pictureBoxPadre = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtocupacion = new System.Windows.Forms.TextBox();
+            this.btnCargarFoto = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPadre)).BeginInit();
             this.SuspendLayout();
             // 
-            // pbPadre
+            // label1
             // 
-            this.pbPadre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPadre.Location = new System.Drawing.Point(896, 40);
-            this.pbPadre.Name = "pbPadre";
-            this.pbPadre.Size = new System.Drawing.Size(248, 277);
-            this.pbPadre.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbPadre.TabIndex = 3;
-            this.pbPadre.TabStop = false;
-            this.pbPadre.DoubleClick += new System.EventHandler(this.pbPadre_DoubleClick);
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(318, 33);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Informacion del padre";
             // 
-            // btnSalir
+            // cmbNino
             // 
-            this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(1005, 561);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(182, 43);
-            this.btnSalir.TabIndex = 4;
-            this.btnSalir.Text = "Guardar y Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.cmbNino.FormattingEnabled = true;
+            this.cmbNino.Location = new System.Drawing.Point(24, 128);
+            this.cmbNino.Name = "cmbNino";
+            this.cmbNino.Size = new System.Drawing.Size(106, 21);
+            this.cmbNino.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Window;
+            this.label2.Location = new System.Drawing.Point(32, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Seleccionar niño";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.Window;
+            this.label3.Location = new System.Drawing.Point(48, 179);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Nombre";
             // 
             // txtNombre
             // 
-            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(85, 63);
+            this.txtNombre.Location = new System.Drawing.Point(24, 224);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(458, 39);
-            this.txtNombre.TabIndex = 5;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(85, 22);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(102, 32);
-            this.lblNombre.TabIndex = 6;
-            this.lblNombre.Text = "Nombre";
-            // 
-            // lblAmaterno
-            // 
-            this.lblAmaterno.AutoSize = true;
-            this.lblAmaterno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmaterno.Location = new System.Drawing.Point(89, 122);
-            this.lblAmaterno.Name = "lblAmaterno";
-            this.lblAmaterno.Size = new System.Drawing.Size(119, 32);
-            this.lblAmaterno.TabIndex = 8;
-            this.lblAmaterno.Text = "Amaterno";
-            // 
-            // txtAmaterno
-            // 
-            this.txtAmaterno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmaterno.Location = new System.Drawing.Point(89, 163);
-            this.txtAmaterno.Name = "txtAmaterno";
-            this.txtAmaterno.Size = new System.Drawing.Size(458, 39);
-            this.txtAmaterno.TabIndex = 7;
-            this.txtAmaterno.TextChanged += new System.EventHandler(this.txtAmaterno_TextChanged);
-            // 
-            // lblApaterno
-            // 
-            this.lblApaterno.AutoSize = true;
-            this.lblApaterno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApaterno.Location = new System.Drawing.Point(85, 213);
-            this.lblApaterno.Name = "lblApaterno";
-            this.lblApaterno.Size = new System.Drawing.Size(112, 32);
-            this.lblApaterno.TabIndex = 10;
-            this.lblApaterno.Text = "Apaterno";
-            // 
-            // txtApaterno
-            // 
-            this.txtApaterno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApaterno.Location = new System.Drawing.Point(85, 254);
-            this.txtApaterno.Name = "txtApaterno";
-            this.txtApaterno.Size = new System.Drawing.Size(458, 39);
-            this.txtApaterno.TabIndex = 9;
-            this.txtApaterno.TextChanged += new System.EventHandler(this.txtApaterno_TextChanged);
-            // 
-            // lblTelefono
-            // 
-            this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono.Location = new System.Drawing.Point(85, 310);
-            this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(107, 32);
-            this.lblTelefono.TabIndex = 12;
-            this.lblTelefono.Text = "Telefono";
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 4;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(85, 351);
+            this.txtTelefono.Location = new System.Drawing.Point(18, 311);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(458, 39);
-            this.txtTelefono.TabIndex = 11;
-            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
+            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono.TabIndex = 5;
             // 
-            // lblOcupacion
+            // label4
             // 
-            this.lblOcupacion.AutoSize = true;
-            this.lblOcupacion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOcupacion.Location = new System.Drawing.Point(85, 409);
-            this.lblOcupacion.Name = "lblOcupacion";
-            this.lblOcupacion.Size = new System.Drawing.Size(128, 32);
-            this.lblOcupacion.TabIndex = 14;
-            this.lblOcupacion.Text = "Ocupacion";
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.Window;
+            this.label4.Location = new System.Drawing.Point(43, 270);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Telefono";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // txtOcupacion
+            // label5
             // 
-            this.txtOcupacion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOcupacion.Location = new System.Drawing.Point(85, 450);
-            this.txtOcupacion.Name = "txtOcupacion";
-            this.txtOcupacion.Size = new System.Drawing.Size(458, 39);
-            this.txtOcupacion.TabIndex = 13;
-            this.txtOcupacion.TextChanged += new System.EventHandler(this.txtOcupacion_TextChanged);
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.Window;
+            this.label5.Location = new System.Drawing.Point(207, 81);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Direccion";
             // 
-            // lblGradoEstudios
+            // txtDireccion
             // 
-            this.lblGradoEstudios.AutoSize = true;
-            this.lblGradoEstudios.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGradoEstudios.Location = new System.Drawing.Point(85, 512);
-            this.lblGradoEstudios.Name = "lblGradoEstudios";
-            this.lblGradoEstudios.Size = new System.Drawing.Size(208, 32);
-            this.lblGradoEstudios.TabIndex = 16;
-            this.lblGradoEstudios.Text = "Grado de estudios";
+            this.txtDireccion.Location = new System.Drawing.Point(182, 129);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(100, 20);
+            this.txtDireccion.TabIndex = 8;
+            this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
             // 
-            // txtGradoEstudios
+            // btnGuardar
             // 
-            this.txtGradoEstudios.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGradoEstudios.Location = new System.Drawing.Point(85, 553);
-            this.txtGradoEstudios.Name = "txtGradoEstudios";
-            this.txtGradoEstudios.Size = new System.Drawing.Size(458, 39);
-            this.txtGradoEstudios.TabIndex = 15;
-            this.txtGradoEstudios.TextChanged += new System.EventHandler(this.txtGradoEstudios_TextChanged);
+            this.btnGuardar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnGuardar.Location = new System.Drawing.Point(430, 325);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 9;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Red;
+            this.btnCancelar.Location = new System.Drawing.Point(580, 325);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // pictureBoxPadre
+            // 
+            this.pictureBoxPadre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxPadre.Location = new System.Drawing.Point(460, 67);
+            this.pictureBoxPadre.Name = "pictureBoxPadre";
+            this.pictureBoxPadre.Size = new System.Drawing.Size(149, 137);
+            this.pictureBoxPadre.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPadre.TabIndex = 11;
+            this.pictureBoxPadre.TabStop = false;
+            this.pictureBoxPadre.DoubleClick += new System.EventHandler(this.pbPadre_DoubleClick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.Window;
+            this.label6.Location = new System.Drawing.Point(201, 179);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Ocupacion";
+            // 
+            // txtocupacion
+            // 
+            this.txtocupacion.Location = new System.Drawing.Point(182, 224);
+            this.txtocupacion.Name = "txtocupacion";
+            this.txtocupacion.Size = new System.Drawing.Size(100, 20);
+            this.txtocupacion.TabIndex = 13;
+            // 
+            // btnCargarFoto
+            // 
+            this.btnCargarFoto.Location = new System.Drawing.Point(487, 221);
+            this.btnCargarFoto.Name = "btnCargarFoto";
+            this.btnCargarFoto.Size = new System.Drawing.Size(75, 23);
+            this.btnCargarFoto.TabIndex = 14;
+            this.btnCargarFoto.Text = "Cargar Foto";
+            this.btnCargarFoto.UseVisualStyleBackColor = true;
+            this.btnCargarFoto.Click += new System.EventHandler(this.btnCargarFoto_Click);
             // 
             // Form_Padre
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1199, 616);
-            this.Controls.Add(this.lblGradoEstudios);
-            this.Controls.Add(this.txtGradoEstudios);
-            this.Controls.Add(this.lblOcupacion);
-            this.Controls.Add(this.txtOcupacion);
-            this.Controls.Add(this.lblTelefono);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(718, 410);
+            this.Controls.Add(this.btnCargarFoto);
+            this.Controls.Add(this.txtocupacion);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.pictureBoxPadre);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.txtDireccion);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtTelefono);
-            this.Controls.Add(this.lblApaterno);
-            this.Controls.Add(this.txtApaterno);
-            this.Controls.Add(this.lblAmaterno);
-            this.Controls.Add(this.txtAmaterno);
-            this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.pbPadre);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbNino);
+            this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Padre";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Padre";
-            ((System.ComponentModel.ISupportInitialize)(this.pbPadre)).EndInit();
+            this.Load += new System.EventHandler(this.Form_Padre_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPadre)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,19 +225,20 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pbPadre;
-        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbNino;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblAmaterno;
-        private System.Windows.Forms.TextBox txtAmaterno;
-        private System.Windows.Forms.Label lblApaterno;
-        private System.Windows.Forms.TextBox txtApaterno;
-        private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Label lblOcupacion;
-        private System.Windows.Forms.TextBox txtOcupacion;
-        private System.Windows.Forms.Label lblGradoEstudios;
-        private System.Windows.Forms.TextBox txtGradoEstudios;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.PictureBox pictureBoxPadre;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtocupacion;
+        private System.Windows.Forms.Button btnCargarFoto;
     }
 }

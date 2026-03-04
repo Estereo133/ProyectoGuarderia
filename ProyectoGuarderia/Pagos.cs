@@ -16,5 +16,10 @@ namespace ProyectoGuarderia
         {
             InitializeComponent();
         }
+
+        private void Form_Pagos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
