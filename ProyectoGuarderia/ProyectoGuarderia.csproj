@@ -152,12 +152,6 @@
     <Compile Include="Tutores.Designer.cs">
       <DependentUpon>Tutores.cs</DependentUpon>
     </Compile>
-    <Compile Include="TutoresPr2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TutoresPr2.Designer.cs">
-      <DependentUpon>TutoresPr2.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Domicilio.resx">
       <DependentUpon>Domicilio.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,9 +188,6 @@
     </Compile>
     <EmbeddedResource Include="Tutores.resx">
       <DependentUpon>Tutores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TutoresPr2.resx">
-      <DependentUpon>TutoresPr2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

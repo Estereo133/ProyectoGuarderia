@@ -25,25 +25,7 @@ namespace ProyectoGuarderia
 
         private void menuTimer_Tick(object sender, EventArgs e)
         {
-            if (menuExpand == false)
-            {
-                MenuPruebas.Height += 70;
-                if (MenuPruebas.Height >= 154)
-                {
-                    menuTimer.Stop();
-                    menuExpand = true;
-
-                }
-            }
-            else
-            {
-                MenuPruebas.Height -= 70;
-                if (MenuPruebas.Height <=44 ) {
-                    menuTimer.Stop();
-                    menuExpand = false;
-                
-                }
-            }
+            
 
         }
 
