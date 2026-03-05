@@ -48,6 +48,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAgTutor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +56,7 @@
             // btnAgregarPadre
             // 
             this.btnAgregarPadre.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAgregarPadre.Location = new System.Drawing.Point(640, 320);
+            this.btnAgregarPadre.Location = new System.Drawing.Point(637, 298);
             this.btnAgregarPadre.Name = "btnAgregarPadre";
             this.btnAgregarPadre.Size = new System.Drawing.Size(167, 42);
             this.btnAgregarPadre.TabIndex = 6;
@@ -68,7 +69,7 @@
             this.txtNombre.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtNombre.Location = new System.Drawing.Point(37, 106);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(100, 26);
             this.txtNombre.TabIndex = 7;
             // 
             // txtApaterno
@@ -76,7 +77,7 @@
             this.txtApaterno.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtApaterno.Location = new System.Drawing.Point(37, 191);
             this.txtApaterno.Name = "txtApaterno";
-            this.txtApaterno.Size = new System.Drawing.Size(100, 20);
+            this.txtApaterno.Size = new System.Drawing.Size(100, 26);
             this.txtApaterno.TabIndex = 8;
             // 
             // txtAmaterno
@@ -84,7 +85,7 @@
             this.txtAmaterno.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtAmaterno.Location = new System.Drawing.Point(37, 261);
             this.txtAmaterno.Name = "txtAmaterno";
-            this.txtAmaterno.Size = new System.Drawing.Size(100, 20);
+            this.txtAmaterno.Size = new System.Drawing.Size(100, 26);
             this.txtAmaterno.TabIndex = 9;
             // 
             // label1
@@ -93,7 +94,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.Window;
             this.label1.Location = new System.Drawing.Point(46, 75);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 10;
             this.label1.Text = "Nombre";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -104,7 +105,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.Window;
             this.label2.Location = new System.Drawing.Point(46, 152);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.Size = new System.Drawing.Size(75, 20);
             this.label2.TabIndex = 11;
             this.label2.Text = "Apaterno";
             // 
@@ -114,7 +115,7 @@
             this.label3.BackColor = System.Drawing.SystemColors.Window;
             this.label3.Location = new System.Drawing.Point(46, 230);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(79, 20);
             this.label3.TabIndex = 12;
             this.label3.Text = "Amaterno";
             // 
@@ -123,7 +124,7 @@
             this.dtpFechaNacimiento.CalendarMonthBackground = System.Drawing.SystemColors.ControlLight;
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(23, 362);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(200, 26);
             this.dtpFechaNacimiento.TabIndex = 13;
             // 
             // cmbSexo
@@ -135,16 +136,16 @@
             "Femenino"});
             this.cmbSexo.Location = new System.Drawing.Point(350, 260);
             this.cmbSexo.Name = "cmbSexo";
-            this.cmbSexo.Size = new System.Drawing.Size(121, 21);
+            this.cmbSexo.Size = new System.Drawing.Size(121, 28);
             this.cmbSexo.TabIndex = 14;
             // 
             // btnGuardar
             // 
             this.btnGuardar.AutoSize = true;
             this.btnGuardar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnGuardar.Location = new System.Drawing.Point(640, 383);
+            this.btnGuardar.Location = new System.Drawing.Point(657, 446);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(78, 30);
             this.btnGuardar.TabIndex = 15;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -153,9 +154,9 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Red;
-            this.btnCancelar.Location = new System.Drawing.Point(732, 383);
+            this.btnCancelar.Location = new System.Drawing.Point(749, 446);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(76, 30);
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -187,7 +188,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(46, 320);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 13);
+            this.label4.Size = new System.Drawing.Size(159, 20);
             this.label4.TabIndex = 19;
             this.label4.Text = "Fecha de Nacimiento";
             // 
@@ -196,7 +197,7 @@
             this.dtpFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaRegistro.Location = new System.Drawing.Point(334, 362);
             this.dtpFechaRegistro.Name = "dtpFechaRegistro";
-            this.dtpFechaRegistro.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaRegistro.Size = new System.Drawing.Size(200, 26);
             this.dtpFechaRegistro.TabIndex = 20;
             this.dtpFechaRegistro.ValueChanged += new System.EventHandler(this.dtpFechaRegistro_ValueChanged);
             // 
@@ -205,7 +206,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(371, 320);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 13);
+            this.label5.Size = new System.Drawing.Size(154, 20);
             this.label5.TabIndex = 21;
             this.label5.Text = "Fecha de inscripción";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -215,7 +216,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(389, 230);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.Size = new System.Drawing.Size(63, 20);
             this.label6.TabIndex = 22;
             this.label6.Text = "Genero";
             // 
@@ -225,7 +226,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(181, 30);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(479, 37);
+            this.label7.Size = new System.Drawing.Size(705, 55);
             this.label7.TabIndex = 23;
             this.label7.Text = "Registro para nuevos alumnos";
             // 
@@ -239,12 +240,23 @@
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
             // 
+            // btnAgTutor
+            // 
+            this.btnAgTutor.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAgTutor.Location = new System.Drawing.Point(637, 356);
+            this.btnAgTutor.Name = "btnAgTutor";
+            this.btnAgTutor.Size = new System.Drawing.Size(167, 42);
+            this.btnAgTutor.TabIndex = 25;
+            this.btnAgTutor.Text = "Agregar Tutor";
+            this.btnAgTutor.UseVisualStyleBackColor = false;
+            // 
             // Form_Niño
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(850, 491);
             this.ControlBox = false;
+            this.Controls.Add(this.btnAgTutor);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -297,5 +309,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnAgTutor;
     }
 }

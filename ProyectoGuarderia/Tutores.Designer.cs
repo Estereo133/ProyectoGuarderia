@@ -50,7 +50,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(165, 90);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(231, 239);
+            this.pictureBox1.Size = new System.Drawing.Size(186, 204);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -70,7 +70,7 @@
             this.pictureBox2.Location = new System.Drawing.Point(514, 90);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(231, 239);
+            this.pictureBox2.Size = new System.Drawing.Size(186, 204);
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
@@ -79,18 +79,18 @@
             this.pictureBox3.Location = new System.Drawing.Point(861, 90);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(231, 239);
+            this.pictureBox3.Size = new System.Drawing.Size(186, 204);
             this.pictureBox3.TabIndex = 9;
             this.pictureBox3.TabStop = false;
             // 
             // dgvTutores
             // 
             this.dgvTutores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTutores.Location = new System.Drawing.Point(53, 387);
+            this.dgvTutores.Location = new System.Drawing.Point(59, 336);
             this.dgvTutores.Name = "dgvTutores";
             this.dgvTutores.RowHeadersWidth = 62;
             this.dgvTutores.RowTemplate.Height = 28;
-            this.dgvTutores.Size = new System.Drawing.Size(1161, 150);
+            this.dgvTutores.Size = new System.Drawing.Size(1158, 137);
             this.dgvTutores.TabIndex = 10;
             // 
             // Form_Tutores
