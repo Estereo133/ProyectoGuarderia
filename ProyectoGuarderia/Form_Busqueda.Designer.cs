@@ -75,9 +75,9 @@
             // 
             this.dgvResultado.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResultado.Location = new System.Drawing.Point(30, 281);
+            this.dgvResultado.Location = new System.Drawing.Point(30, 265);
             this.dgvResultado.Name = "dgvResultado";
-            this.dgvResultado.Size = new System.Drawing.Size(744, 75);
+            this.dgvResultado.Size = new System.Drawing.Size(744, 173);
             this.dgvResultado.TabIndex = 3;
             this.dgvResultado.SelectionChanged += new System.EventHandler(this.dgvResultado_SelectionChanged_1);
             // 
@@ -140,7 +140,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 458);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBoxPadre);

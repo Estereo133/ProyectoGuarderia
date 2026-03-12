@@ -178,5 +178,20 @@ namespace ProyectoGuarderia
         {
 
         }
+
+        private void btnAgTutor_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            using (var formTutor = new Form_Tutores())
+            {
+                formTutor.ShowDialog();
+            }
+
+            this.Show();
+
+            // refrescar lista
+           // CargarNinos();
+        }
     }
 }

@@ -251,6 +251,7 @@
             this.btnAgTutor.TabIndex = 25;
             this.btnAgTutor.Text = "Agregar Tutor";
             this.btnAgTutor.UseVisualStyleBackColor = false;
+            this.btnAgTutor.Click += new System.EventHandler(this.btnAgTutor_Click);
             // 
             // dateTimePicker1
             // 

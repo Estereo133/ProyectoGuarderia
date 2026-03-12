@@ -178,7 +178,7 @@
             // listImag
             // 
             this.listImag.FormattingEnabled = true;
-            this.listImag.Location = new System.Drawing.Point(241, 29);
+            this.listImag.Location = new System.Drawing.Point(422, 29);
             this.listImag.Name = "listImag";
             this.listImag.Size = new System.Drawing.Size(163, 121);
             this.listImag.TabIndex = 17;

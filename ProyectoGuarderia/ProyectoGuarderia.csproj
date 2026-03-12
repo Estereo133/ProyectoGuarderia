@@ -95,6 +95,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuscarTutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarTutores.Designer.cs">
+      <DependentUpon>BuscarTutores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conexion.cs" />
     <Compile Include="Domicilio.cs">
       <SubType>Form</SubType>
@@ -152,6 +158,9 @@
     <Compile Include="Tutores.Designer.cs">
       <DependentUpon>Tutores.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BuscarTutores.resx">
+      <DependentUpon>BuscarTutores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Domicilio.resx">
       <DependentUpon>Domicilio.cs</DependentUpon>
     </EmbeddedResource>
