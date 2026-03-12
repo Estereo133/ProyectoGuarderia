@@ -173,5 +173,10 @@ namespace ProyectoGuarderia
 
             rutaImagen = "";
         }
+
+        private void pictureBoxFoto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

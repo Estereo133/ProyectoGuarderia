@@ -29,18 +29,22 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picBoxImage = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.texApat = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.textAMate = new System.Windows.Forms.TextBox();
+            this.butCerrar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.textNUM = new System.Windows.Forms.TextBox();
+            this.mySqlConnection1 = new MySql.Data.MySqlClient.MySqlConnection();
+            this.butImage = new System.Windows.Forms.Button();
+            this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
+            this.textNom = new System.Windows.Forms.TextBox();
+            this.butGuar = new System.Windows.Forms.Button();
+            this.listImag = new System.Windows.Forms.ListBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxImage)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -55,20 +59,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Tutores";
             // 
-            // textBox1
+            // picBoxImage
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 20);
-            this.textBox1.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(400, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(161, 160);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.picBoxImage.Location = new System.Drawing.Point(419, 18);
+            this.picBoxImage.Name = "picBoxImage";
+            this.picBoxImage.Size = new System.Drawing.Size(166, 148);
+            this.picBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxImage.TabIndex = 3;
+            this.picBoxImage.TabStop = false;
+            this.picBoxImage.Click += new System.EventHandler(this.picBoxImage_Click);
             // 
             // label2
             // 
@@ -89,12 +88,13 @@
             this.label3.Text = "Apellido Paterno";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // textBox2
+            // texApat
             // 
-            this.textBox2.Location = new System.Drawing.Point(15, 130);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(158, 20);
-            this.textBox2.TabIndex = 5;
+            this.texApat.Location = new System.Drawing.Point(15, 130);
+            this.texApat.Name = "texApat";
+            this.texApat.Size = new System.Drawing.Size(184, 20);
+            this.texApat.TabIndex = 5;
+            this.texApat.TextChanged += new System.EventHandler(this.texApat_TextChanged);
             // 
             // label4
             // 
@@ -105,30 +105,23 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Apellido Materno";
             // 
-            // textBox3
+            // textAMate
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 181);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(158, 20);
-            this.textBox3.TabIndex = 7;
+            this.textAMate.Location = new System.Drawing.Point(12, 181);
+            this.textAMate.Name = "textAMate";
+            this.textAMate.Size = new System.Drawing.Size(187, 20);
+            this.textAMate.TabIndex = 7;
+            this.textAMate.TextChanged += new System.EventHandler(this.textAMate_TextChanged);
             // 
-            // button1
+            // butCerrar
             // 
-            this.button1.Location = new System.Drawing.Point(383, 270);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 60);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(501, 270);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 60);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.butCerrar.Location = new System.Drawing.Point(501, 270);
+            this.butCerrar.Name = "butCerrar";
+            this.butCerrar.Size = new System.Drawing.Size(89, 60);
+            this.butCerrar.TabIndex = 10;
+            this.butCerrar.Text = "Cerrar";
+            this.butCerrar.UseVisualStyleBackColor = true;
+            this.butCerrar.Click += new System.EventHandler(this.butCerrar_Click);
             // 
             // label5
             // 
@@ -139,35 +132,82 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Numero de Telefono";
             // 
-            // textBox4
+            // textNUM
             // 
-            this.textBox4.Location = new System.Drawing.Point(78, 256);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(243, 20);
-            this.textBox4.TabIndex = 11;
+            this.textNUM.Location = new System.Drawing.Point(78, 256);
+            this.textNUM.Name = "textNUM";
+            this.textNUM.Size = new System.Drawing.Size(243, 20);
+            this.textNUM.TabIndex = 11;
+            this.textNUM.TextChanged += new System.EventHandler(this.textNUM_TextChanged);
+            // 
+            // butImage
+            // 
+            this.butImage.Location = new System.Drawing.Point(446, 184);
+            this.butImage.Name = "butImage";
+            this.butImage.Size = new System.Drawing.Size(115, 27);
+            this.butImage.TabIndex = 13;
+            this.butImage.Text = "Agregar Image";
+            this.butImage.UseVisualStyleBackColor = true;
+            this.butImage.Click += new System.EventHandler(this.butImage_Click);
+            // 
+            // mySqlCommand1
+            // 
+            this.mySqlCommand1.CacheAge = 0;
+            this.mySqlCommand1.Connection = null;
+            this.mySqlCommand1.EnableCaching = false;
+            this.mySqlCommand1.Transaction = null;
+            // 
+            // textNom
+            // 
+            this.textNom.Location = new System.Drawing.Point(14, 79);
+            this.textNom.Name = "textNom";
+            this.textNom.Size = new System.Drawing.Size(184, 20);
+            this.textNom.TabIndex = 14;
+            this.textNom.TextChanged += new System.EventHandler(this.textNom_TextChanged);
+            // 
+            // butGuar
+            // 
+            this.butGuar.Location = new System.Drawing.Point(389, 270);
+            this.butGuar.Name = "butGuar";
+            this.butGuar.Size = new System.Drawing.Size(89, 60);
+            this.butGuar.TabIndex = 15;
+            this.butGuar.Text = "Guardar";
+            this.butGuar.UseVisualStyleBackColor = true;
+            this.butGuar.Click += new System.EventHandler(this.butGuar_Click);
+            // 
+            // listImag
+            // 
+            this.listImag.FormattingEnabled = true;
+            this.listImag.Location = new System.Drawing.Point(241, 29);
+            this.listImag.Name = "listImag";
+            this.listImag.Size = new System.Drawing.Size(163, 121);
+            this.listImag.TabIndex = 17;
+            this.listImag.SelectedIndexChanged += new System.EventHandler(this.listImag_SelectedIndexChanged);
             // 
             // Form_Tutores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(621, 376);
+            this.Controls.Add(this.listImag);
+            this.Controls.Add(this.butGuar);
+            this.Controls.Add(this.textNom);
+            this.Controls.Add(this.butImage);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textNUM);
+            this.Controls.Add(this.butCerrar);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textAMate);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.texApat);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.picBoxImage);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_Tutores";
             this.Text = "Tutores";
             this.Load += new System.EventHandler(this.Form_Tutores_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,16 +215,20 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picBoxImage;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox texApat;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textAMate;
+        private System.Windows.Forms.Button butCerrar;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textNUM;
+        private MySql.Data.MySqlClient.MySqlConnection mySqlConnection1;
+        private System.Windows.Forms.Button butImage;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
+        private System.Windows.Forms.TextBox textNom;
+        private System.Windows.Forms.Button butGuar;
+        private System.Windows.Forms.ListBox listImag;
     }
 }
