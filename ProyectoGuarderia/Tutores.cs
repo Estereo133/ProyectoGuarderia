@@ -31,7 +31,7 @@ namespace ProyectoGuarderia
 
         private void MenuTutor_Click(object sender, EventArgs e)
         {
-            menuTimer.Start();
+            //menuTimer.Start();
         }
 
         private void label3_Click(object sender, EventArgs e)
