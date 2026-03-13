@@ -95,12 +95,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuscarTutores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BuscarTutores.Designer.cs">
-      <DependentUpon>BuscarTutores.cs</DependentUpon>
-    </Compile>
     <Compile Include="Conexion.cs" />
     <Compile Include="Domicilio.cs">
       <SubType>Form</SubType>
@@ -125,6 +119,12 @@
     </Compile>
     <Compile Include="Form_NIñocs.Designer.cs">
       <DependentUpon>Form_NIñocs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inf_comNIno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inf_comNIno.Designer.cs">
+      <DependentUpon>Inf_comNIno.cs</DependentUpon>
     </Compile>
     <Compile Include="Niños.cs">
       <SubType>Form</SubType>
@@ -158,9 +158,6 @@
     <Compile Include="Tutores.Designer.cs">
       <DependentUpon>Tutores.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BuscarTutores.resx">
-      <DependentUpon>BuscarTutores.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Domicilio.resx">
       <DependentUpon>Domicilio.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_NIñocs.resx">
       <DependentUpon>Form_NIñocs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inf_comNIno.resx">
+      <DependentUpon>Inf_comNIno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Niños.resx">
       <DependentUpon>Niños.cs</DependentUpon>

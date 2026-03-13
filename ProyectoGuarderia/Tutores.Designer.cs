@@ -144,7 +144,7 @@
             // 
             this.butImage.Location = new System.Drawing.Point(446, 184);
             this.butImage.Name = "butImage";
-            this.butImage.Size = new System.Drawing.Size(115, 27);
+            this.butImage.Size = new System.Drawing.Size(115, 40);
             this.butImage.TabIndex = 13;
             this.butImage.Text = "Agregar Image";
             this.butImage.UseVisualStyleBackColor = true;
@@ -178,9 +178,9 @@
             // listImag
             // 
             this.listImag.FormattingEnabled = true;
-            this.listImag.Location = new System.Drawing.Point(422, 29);
+            this.listImag.Location = new System.Drawing.Point(419, 29);
             this.listImag.Name = "listImag";
-            this.listImag.Size = new System.Drawing.Size(163, 121);
+            this.listImag.Size = new System.Drawing.Size(166, 108);
             this.listImag.TabIndex = 17;
             this.listImag.SelectedIndexChanged += new System.EventHandler(this.listImag_SelectedIndexChanged);
             // 
