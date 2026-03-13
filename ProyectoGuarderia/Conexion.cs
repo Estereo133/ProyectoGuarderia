@@ -11,8 +11,7 @@ namespace ProyectoGuarderia
     {
         // Cadena de conexión
         private static string cadena =
-            "Server=localhost;Port=3306;Database=Guarderia;Uid=root;Pwd=root;"
-;
+"Server=localhost;Port=3306;Database=guarderia;Uid=root;Pwd=root;";
 
         // Método para conectar
         public static MySqlConnection conectar()

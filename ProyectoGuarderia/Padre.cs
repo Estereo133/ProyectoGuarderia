@@ -18,11 +18,65 @@ namespace ProyectoGuarderia
 
     public partial class Form_Padre : Form
     {
+        int idPadre = 0;
+        int idNinoSeleccionado = 0;
         string rutaImagen = "";
 
         public Form_Padre()
         {
             InitializeComponent();
+            
+        }
+        public Form_Padre(int id)
+        {
+            InitializeComponent();
+            idPadre = id;
+        }
+        private void CargarPadre()
+        {
+            string conexion = "server=localhost;database=guarderia;uid=root;pwd=root;";
+            MySqlConnection conn = new MySqlConnection(conexion);
+
+            try
+            {
+                conn.Open();
+
+                string query = "SELECT * FROM padres WHERE IdPadre=@id";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id", idPadre);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    txtNombre.Text = reader["Nombre"].ToString();
+                    txtTelefono.Text = reader["Telefono"].ToString();
+                    txtDireccion.Text = reader["Direccion"].ToString();
+                    idNinoSeleccionado = Convert.ToInt32(reader["IdNino"]);
+
+                    string ruta = reader["Image"].ToString();
+
+                    if (!string.IsNullOrEmpty(ruta) && File.Exists(ruta))
+                    {
+                        pictureBoxPadre.Image = Image.FromFile(ruta);
+                    }
+                    else
+                    {
+                        pictureBoxPadre.Image = Properties.Resources.usuario;
+                    }
+
+
+
+             }
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
         private void label2_Click(object sender, EventArgs e)
         {
@@ -36,6 +90,24 @@ namespace ProyectoGuarderia
         // CARGAR NIÑOS
         private void Form_Padre_Load(object sender, EventArgs e)
         {
+
+
+            if (idPadre != 0)
+            {
+                CargarPadre();
+            }
+
+            for (int i = 0; i < cmbNino.Items.Count; i++)
+            {
+                string item = cmbNino.Items[i].ToString();
+
+                if (item.StartsWith(idNinoSeleccionado.ToString() + " -"))
+                {
+                    cmbNino.SelectedIndex = i;
+                    break;
+                }
+            }
+
             try
             {
                 using (MySqlConnection conn = Conexion.conectar())
@@ -115,22 +187,41 @@ namespace ProyectoGuarderia
                 using (MySqlConnection conn = Conexion.conectar())
                 {
                     conn.Open();
+                    string query;
 
-                    string query = @"INSERT INTO padres
-                    (IdNino, Nombre, Telefono, Direccion, Imagen)
-                    VALUES
-                    (@IdNino, @Nombre, @Telefono, @Direccion, @Imagen)";
+                    if (idPadre == 0)
+                    {
+                        query = @"INSERT INTO padres
+    (IdNino, Nombre, Telefono, Direccion, Image)
+    VALUES
+    (@IdNino, @Nombre, @Telefono, @Direccion, @Image)";
+                    }
+                    else
+                    {
+                        query = @"UPDATE padres SET
+    IdNino=@IdNino,
+    Nombre=@Nombre,
+    Telefono=@Telefono,
+    Direccion=@Direccion,
+    Image=@Image
+    WHERE IdPadre=@IdPadre";
+                    }
 
-                    MySqlCommand cmd =
-                    new MySqlCommand(query, conn);
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
 
                     cmd.Parameters.AddWithValue("@IdNino", idNino);
                     cmd.Parameters.AddWithValue("@Nombre", txtNombre.Text);
                     cmd.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
                     cmd.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
-                    cmd.Parameters.AddWithValue("@Imagen", rutaGuardar);
-                    
+                    cmd.Parameters.AddWithValue("@Image", rutaGuardar);
+
+                    if (idPadre != 0)
+                    {
+                        cmd.Parameters.AddWithValue("@IdPadre", idPadre);
+                    }
+
                     cmd.ExecuteNonQuery();
+                    this.Close();
                 }
 
                 MessageBox.Show("Padre guardado correctamente");
