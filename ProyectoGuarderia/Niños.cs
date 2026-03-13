@@ -114,5 +114,32 @@ namespace ProyectoGuarderia
         {
 
         }
+
+        private void pictureBoxFoto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dgvNinos.CurrentRow != null)
+            {
+                Inf_comNIno formInfo = new Inf_comNIno();
+
+                formInfo.nombre = dgvNinos.CurrentRow.Cells["Nombre"].Value.ToString();
+                formInfo.apaterno = dgvNinos.CurrentRow.Cells["Apaterno"].Value.ToString();
+                formInfo.amaterno = dgvNinos.CurrentRow.Cells["Amaterno"].Value.ToString();
+                formInfo.fecha = dgvNinos.CurrentRow.Cells["FechaNacimiento"].Value.ToString();
+                formInfo.sexo = dgvNinos.CurrentRow.Cells["Sexo"].Value.ToString();
+                formInfo.foto = dgvNinos.CurrentRow.Cells["Foto"].Value.ToString();
+
+                formInfo.ShowDialog();
+            }
+        }
+
+        private void dgvNinos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

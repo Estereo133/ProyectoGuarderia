@@ -34,6 +34,7 @@
             this.dgvNinos = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNinos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +67,7 @@
             this.dgvNinos.Name = "dgvNinos";
             this.dgvNinos.Size = new System.Drawing.Size(740, 150);
             this.dgvNinos.TabIndex = 8;
+            this.dgvNinos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNinos_CellContentClick);
             this.dgvNinos.SelectionChanged += new System.EventHandler(this.dgvNinos_SelectionChanged);
             // 
             // label1
@@ -88,12 +90,24 @@
             this.pictureBoxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFoto.TabIndex = 9;
             this.pictureBoxFoto.TabStop = false;
+            this.pictureBoxFoto.Click += new System.EventHandler(this.pictureBoxFoto_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(469, 397);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 43);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Todo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form_Niños
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(888, 464);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBoxFoto);
             this.Controls.Add(this.dgvNinos);
@@ -119,5 +133,6 @@
         private System.Windows.Forms.DataGridView dgvNinos;
         private System.Windows.Forms.PictureBox pictureBoxFoto;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
