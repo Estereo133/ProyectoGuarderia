@@ -159,8 +159,7 @@ namespace ProyectoGuarderia
 
         private void butCerrar_Click(object sender, EventArgs e)
         {
-            //butCerrar.Enabled = false;
-
+     
             this.Close();
         }
 
