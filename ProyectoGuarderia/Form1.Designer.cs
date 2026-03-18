@@ -32,22 +32,21 @@
             this.lbl_Menu = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnAyuda = new System.Windows.Forms.Button();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.labelDivicion = new System.Windows.Forms.Label();
-            this.panelApp = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnEmergencia = new System.Windows.Forms.Button();
             this.btnDomicilio = new System.Windows.Forms.Button();
             this.btnPagos = new System.Windows.Forms.Button();
             this.btnTutores = new System.Windows.Forms.Button();
             this.btnPadres = new System.Windows.Forms.Button();
             this.btnNiños = new System.Windows.Forms.Button();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.labelDivicion = new System.Windows.Forms.Label();
             this.pcLogo = new System.Windows.Forms.PictureBox();
+            this.panelApp = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcLogo)).BeginInit();
             this.panelApp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Menu
@@ -57,7 +56,7 @@
             this.lbl_Menu.Location = new System.Drawing.Point(-2, -3);
             this.lbl_Menu.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.lbl_Menu.Name = "lbl_Menu";
-            this.lbl_Menu.Size = new System.Drawing.Size(149, 55);
+            this.lbl_Menu.Size = new System.Drawing.Size(219, 82);
             this.lbl_Menu.TabIndex = 0;
             this.lbl_Menu.Text = "Menu";
             this.lbl_Menu.Click += new System.EventHandler(this.lbl_Menu_Click);
@@ -65,7 +64,6 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.Cyan;
-            this.panelMenu.Controls.Add(this.btnEmergencia);
             this.panelMenu.Controls.Add(this.btnAyuda);
             this.panelMenu.Controls.Add(this.btnDomicilio);
             this.panelMenu.Controls.Add(this.btnPagos);
@@ -93,67 +91,6 @@
             this.btnAyuda.Text = "Salir";
             this.btnAyuda.UseVisualStyleBackColor = true;
             this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
-            // 
-            // panelLogo
-            // 
-            this.panelLogo.Controls.Add(this.labelDivicion);
-            this.panelLogo.Controls.Add(this.pcLogo);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(320, 155);
-            this.panelLogo.TabIndex = 0;
-            // 
-            // labelDivicion
-            // 
-            this.labelDivicion.AutoSize = true;
-            this.labelDivicion.BackColor = System.Drawing.Color.Cyan;
-            this.labelDivicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDivicion.ForeColor = System.Drawing.Color.White;
-            this.labelDivicion.Location = new System.Drawing.Point(-5, 129);
-            this.labelDivicion.Name = "labelDivicion";
-            this.labelDivicion.Size = new System.Drawing.Size(431, 18);
-            this.labelDivicion.TabIndex = 1;
-            this.labelDivicion.Text = "_______________________________________________";
-            this.labelDivicion.Click += new System.EventHandler(this.labelDivicion_Click);
-            // 
-            // panelApp
-            // 
-            this.panelApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(222)))));
-            this.panelApp.Controls.Add(this.pictureBox1);
-            this.panelApp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelApp.Location = new System.Drawing.Point(320, 0);
-            this.panelApp.Name = "panelApp";
-            this.panelApp.Size = new System.Drawing.Size(445, 460);
-            this.panelApp.TabIndex = 2;
-            this.panelApp.Paint += new System.Windows.Forms.PaintEventHandler(this.panelApp_Paint);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(445, 460);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnEmergencia
-            // 
-            this.btnEmergencia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEmergencia.FlatAppearance.BorderSize = 0;
-            this.btnEmergencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmergencia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmergencia.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEmergencia.Image = global::ProyectoGuarderia.Properties.Resources.llamada_de_emergencia;
-            this.btnEmergencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmergencia.Location = new System.Drawing.Point(0, 375);
-            this.btnEmergencia.Name = "btnEmergencia";
-            this.btnEmergencia.Size = new System.Drawing.Size(320, 44);
-            this.btnEmergencia.TabIndex = 6;
-            this.btnEmergencia.Text = "Emergencia";
-            this.btnEmergencia.UseVisualStyleBackColor = true;
-            this.btnEmergencia.Click += new System.EventHandler(this.btnEmergencia_Click);
             // 
             // btnDomicilio
             // 
@@ -240,6 +177,29 @@
             this.btnNiños.UseVisualStyleBackColor = true;
             this.btnNiños.Click += new System.EventHandler(this.btnNiños_Click);
             // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.labelDivicion);
+            this.panelLogo.Controls.Add(this.pcLogo);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(320, 155);
+            this.panelLogo.TabIndex = 0;
+            // 
+            // labelDivicion
+            // 
+            this.labelDivicion.AutoSize = true;
+            this.labelDivicion.BackColor = System.Drawing.Color.Cyan;
+            this.labelDivicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDivicion.ForeColor = System.Drawing.Color.White;
+            this.labelDivicion.Location = new System.Drawing.Point(-5, 129);
+            this.labelDivicion.Name = "labelDivicion";
+            this.labelDivicion.Size = new System.Drawing.Size(623, 26);
+            this.labelDivicion.TabIndex = 1;
+            this.labelDivicion.Text = "_______________________________________________";
+            this.labelDivicion.Click += new System.EventHandler(this.labelDivicion_Click);
+            // 
             // pcLogo
             // 
             this.pcLogo.Image = global::ProyectoGuarderia.Properties.Resources.guarderia;
@@ -249,6 +209,27 @@
             this.pcLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcLogo.TabIndex = 0;
             this.pcLogo.TabStop = false;
+            // 
+            // panelApp
+            // 
+            this.panelApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(222)))));
+            this.panelApp.Controls.Add(this.pictureBox1);
+            this.panelApp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelApp.Location = new System.Drawing.Point(320, 0);
+            this.panelApp.Name = "panelApp";
+            this.panelApp.Size = new System.Drawing.Size(445, 460);
+            this.panelApp.TabIndex = 2;
+            this.panelApp.Paint += new System.Windows.Forms.PaintEventHandler(this.panelApp_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(445, 460);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Form_Menu
             // 
@@ -270,9 +251,9 @@
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcLogo)).EndInit();
             this.panelApp.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,7 +274,6 @@
         private System.Windows.Forms.Button btnPadres;
         private System.Windows.Forms.Button btnAyuda;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnEmergencia;
     }
 }
 
