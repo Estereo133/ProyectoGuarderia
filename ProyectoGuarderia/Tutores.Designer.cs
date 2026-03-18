@@ -43,7 +43,6 @@
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.textNom = new System.Windows.Forms.TextBox();
             this.butGuar = new System.Windows.Forms.Button();
-            this.listImag = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +60,7 @@
             // 
             // picBoxImage
             // 
-            this.picBoxImage.Location = new System.Drawing.Point(419, 18);
+            this.picBoxImage.Location = new System.Drawing.Point(424, 12);
             this.picBoxImage.Name = "picBoxImage";
             this.picBoxImage.Size = new System.Drawing.Size(166, 148);
             this.picBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -175,21 +174,11 @@
             this.butGuar.UseVisualStyleBackColor = true;
             this.butGuar.Click += new System.EventHandler(this.butGuar_Click);
             // 
-            // listImag
-            // 
-            this.listImag.FormattingEnabled = true;
-            this.listImag.Location = new System.Drawing.Point(419, 29);
-            this.listImag.Name = "listImag";
-            this.listImag.Size = new System.Drawing.Size(166, 108);
-            this.listImag.TabIndex = 17;
-            this.listImag.SelectedIndexChanged += new System.EventHandler(this.listImag_SelectedIndexChanged);
-            // 
             // Form_Tutores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(621, 376);
-            this.Controls.Add(this.listImag);
             this.Controls.Add(this.butGuar);
             this.Controls.Add(this.textNom);
             this.Controls.Add(this.butImage);
@@ -229,6 +218,5 @@
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private System.Windows.Forms.TextBox textNom;
         private System.Windows.Forms.Button butGuar;
-        private System.Windows.Forms.ListBox listImag;
     }
 }

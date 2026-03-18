@@ -59,7 +59,7 @@ namespace ProyectoGuarderia
         private void btnTutores_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (var formTutores = new Form_Tutores())
+            using (var formTutores = new tutoresTablas())
             {
                 formTutores.ShowDialog();
             }
