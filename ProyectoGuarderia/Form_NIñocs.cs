@@ -109,31 +109,34 @@ namespace ProyectoGuarderia
                     conn.Open();
 
                     string query = @"INSERT INTO Nino
-                                    (
-                                        Nombre,
-                                        Apaterno,
-                                        Amaterno,
-                                        FechaNacimiento,
-                                        Sexo,
-                                        Foto,
-                                        FechaRegistro
-                                    )
-                                    VALUES
-                                    (
-                                        @Nombre,
-                                        @Apaterno,
-                                        @Amaterno,
-                                        @FechaNacimiento,
-                                        @Sexo,
-                                        @Foto,
-                                        @FechaRegistro
-                                    )";
+                    (
+                        Nombre,
+                        Apaterno,
+                        Amaterno,
+                        CURP,
+                        FechaNacimiento,
+                        Sexo,
+                        Foto,
+                        FechaRegistro
+                    )
+                    VALUES
+                    (
+                        @Nombre,
+                        @Apaterno,
+                        @Amaterno,
+                        @CURP,
+                        @FechaNacimiento,
+                        @Sexo,
+                        @Foto,
+                        @FechaRegistro
+                    )";
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
 
                     cmd.Parameters.AddWithValue("@Nombre", txtNombre.Text);
                     cmd.Parameters.AddWithValue("@Apaterno", txtApaterno.Text);
                     cmd.Parameters.AddWithValue("@Amaterno", txtAmaterno.Text);
+                    cmd.Parameters.AddWithValue("@CURP", txtCurp.Text);   // 👈 nuevo campo
                     cmd.Parameters.AddWithValue("@FechaNacimiento", dtpFechaNacimiento.Value.Date);
                     cmd.Parameters.AddWithValue("@Sexo", cmbSexo.Text);
                     cmd.Parameters.AddWithValue("@Foto", rutaGuardar);
@@ -141,6 +144,7 @@ namespace ProyectoGuarderia
 
                     cmd.ExecuteNonQuery();
                 }
+
 
                 MessageBox.Show("Niño registrado correctamente ✅");
 
@@ -192,6 +196,17 @@ namespace ProyectoGuarderia
 
             // refrescar lista
            // CargarNinos();
+        }
+
+        private void txtCurp_TextChanged(object sender, EventArgs e)
+        {
+            // Validar longitud de CURP
+            if (txtCurp.Text.Length > 18)
+            {
+                MessageBox.Show("El CURP no puede tener más de 18 caracteres.");
+                txtCurp.Text = txtCurp.Text.Substring(0, 18);
+                txtCurp.SelectionStart = txtCurp.Text.Length; // mover cursor al final
+            }
         }
     }
 }

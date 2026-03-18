@@ -50,6 +50,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAgTutor = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lblCurp = new System.Windows.Forms.Label();
+            this.txtCurp = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +72,7 @@
             this.txtNombre.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtNombre.Location = new System.Drawing.Point(37, 106);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(100, 26);
             this.txtNombre.TabIndex = 7;
             // 
             // txtApaterno
@@ -78,7 +80,7 @@
             this.txtApaterno.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtApaterno.Location = new System.Drawing.Point(37, 191);
             this.txtApaterno.Name = "txtApaterno";
-            this.txtApaterno.Size = new System.Drawing.Size(100, 20);
+            this.txtApaterno.Size = new System.Drawing.Size(100, 26);
             this.txtApaterno.TabIndex = 8;
             // 
             // txtAmaterno
@@ -86,7 +88,7 @@
             this.txtAmaterno.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtAmaterno.Location = new System.Drawing.Point(37, 261);
             this.txtAmaterno.Name = "txtAmaterno";
-            this.txtAmaterno.Size = new System.Drawing.Size(100, 20);
+            this.txtAmaterno.Size = new System.Drawing.Size(100, 26);
             this.txtAmaterno.TabIndex = 9;
             // 
             // label1
@@ -95,7 +97,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.Window;
             this.label1.Location = new System.Drawing.Point(46, 75);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 10;
             this.label1.Text = "Nombre";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -106,7 +108,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.Window;
             this.label2.Location = new System.Drawing.Point(46, 152);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.Size = new System.Drawing.Size(75, 20);
             this.label2.TabIndex = 11;
             this.label2.Text = "Apaterno";
             // 
@@ -116,16 +118,16 @@
             this.label3.BackColor = System.Drawing.SystemColors.Window;
             this.label3.Location = new System.Drawing.Point(46, 230);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(79, 20);
             this.label3.TabIndex = 12;
             this.label3.Text = "Amaterno";
             // 
             // dtpFechaNacimiento
             // 
             this.dtpFechaNacimiento.CalendarMonthBackground = System.Drawing.SystemColors.ControlLight;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(23, 362);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(30, 445);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(200, 26);
             this.dtpFechaNacimiento.TabIndex = 13;
             // 
             // cmbSexo
@@ -137,7 +139,7 @@
             "Femenino"});
             this.cmbSexo.Location = new System.Drawing.Point(350, 260);
             this.cmbSexo.Name = "cmbSexo";
-            this.cmbSexo.Size = new System.Drawing.Size(121, 21);
+            this.cmbSexo.Size = new System.Drawing.Size(121, 28);
             this.cmbSexo.TabIndex = 14;
             // 
             // btnGuardar
@@ -188,27 +190,27 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(46, 320);
+            this.label4.Location = new System.Drawing.Point(53, 403);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 13);
+            this.label4.Size = new System.Drawing.Size(159, 20);
             this.label4.TabIndex = 19;
             this.label4.Text = "Fecha de Nacimiento";
             // 
             // dtpFechaRegistro
             // 
             this.dtpFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaRegistro.Location = new System.Drawing.Point(334, 362);
+            this.dtpFechaRegistro.Location = new System.Drawing.Point(341, 445);
             this.dtpFechaRegistro.Name = "dtpFechaRegistro";
-            this.dtpFechaRegistro.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaRegistro.Size = new System.Drawing.Size(200, 26);
             this.dtpFechaRegistro.TabIndex = 20;
             this.dtpFechaRegistro.ValueChanged += new System.EventHandler(this.dtpFechaRegistro_ValueChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(371, 320);
+            this.label5.Location = new System.Drawing.Point(378, 403);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 13);
+            this.label5.Size = new System.Drawing.Size(154, 20);
             this.label5.TabIndex = 21;
             this.label5.Text = "Fecha de inscripción";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -218,7 +220,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(389, 230);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.Size = new System.Drawing.Size(63, 20);
             this.label6.TabIndex = 22;
             this.label6.Text = "Genero";
             // 
@@ -228,7 +230,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(181, 30);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(479, 37);
+            this.label7.Size = new System.Drawing.Size(705, 55);
             this.label7.TabIndex = 23;
             this.label7.Text = "Registro para nuevos alumnos";
             // 
@@ -257,8 +259,28 @@
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(625, 272);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
             this.dateTimePicker1.TabIndex = 26;
+            // 
+            // lblCurp
+            // 
+            this.lblCurp.AutoSize = true;
+            this.lblCurp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurp.Location = new System.Drawing.Point(45, 324);
+            this.lblCurp.Name = "lblCurp";
+            this.lblCurp.Size = new System.Drawing.Size(73, 25);
+            this.lblCurp.TabIndex = 27;
+            this.lblCurp.Text = "CURP:";
+            // 
+            // txtCurp
+            // 
+            this.txtCurp.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtCurp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCurp.Location = new System.Drawing.Point(124, 324);
+            this.txtCurp.Name = "txtCurp";
+            this.txtCurp.Size = new System.Drawing.Size(286, 30);
+            this.txtCurp.TabIndex = 28;
+            this.txtCurp.TextChanged += new System.EventHandler(this.txtCurp_TextChanged);
             // 
             // Form_Niño
             // 
@@ -266,6 +288,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(850, 491);
             this.ControlBox = false;
+            this.Controls.Add(this.txtCurp);
+            this.Controls.Add(this.lblCurp);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnAgTutor);
             this.Controls.Add(this.pictureBox1);
@@ -322,5 +346,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnAgTutor;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label lblCurp;
+        private System.Windows.Forms.TextBox txtCurp;
     }
 }
