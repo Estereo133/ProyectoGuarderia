@@ -2,26 +2,22 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-
-using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace ProyectoGuarderia
 {
     public partial class Form_Tutores : Form
     {
-        public int IdTutor = 0;
-        string conexion = "Server=localhost;Database=guarderia;Uid=root;Pwd=root;";
-        
+        private String RutaImagens = "";//ruta temporal de la imagen
         private string CarpF; // carpeta donde se guardaran todas las imagenes
-        
 
         public Form_Tutores()
         {
@@ -79,80 +75,30 @@ namespace ProyectoGuarderia
 
         }
 
-        // Guardar 
-
         private void butGuar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textNom.Text) ||
-        string.IsNullOrWhiteSpace(texApat.Text) ||
-        string.IsNullOrWhiteSpace(textNUM.Text))
-            {
-                MessageBox.Show("Completa los campos obligatorios");
-                return;
-            }
-
-            if (string.IsNullOrEmpty(rutaImagenSeleccionada))
-            {
-                MessageBox.Show("Selecciona una imagen");
-                return;
-            }
-
             string nombre = textNom.Text;
             string Apaterno = texApat.Text;
             string Amaterno = textAMate.Text;
             string NumTele = textNUM.Text;
 
-            string extension = Path.GetExtension(rutaImagenSeleccionada);
-            string nombreArchivo = Guid.NewGuid().ToString() + extension;
-            string rutaGuardar = Path.Combine(CarpF, nombreArchivo);
+            string rutaGuardar = "";
 
-            File.Copy(rutaImagenSeleccionada, rutaGuardar, true);
-
-            using (MySqlConnection con = new MySqlConnection(conexion))
+            if (!string.IsNullOrEmpty(rutaImagenSeleccionada))
             {
-                con.Open();
+                string extension = Path.GetExtension(rutaImagenSeleccionada);
+                string nombreArchivo = Guid.NewGuid().ToString() + extension; // Nombre único
+                rutaGuardar = Path.Combine(CarpF, nombreArchivo);
 
-                string query;
+                File.Copy(rutaImagenSeleccionada, rutaGuardar, true); // Guardar imagen en Fotos
 
-                if (IdTutor == 0)
-                {
-                    query = "INSERT INTO tutores (Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, RutaImagen) VALUES (@nom,@ap,@am,@tel,@img)";
-                }
-                else
-                {
-                    query = "UPDATE tutores SET Nombre=@nom, ApellidoPaterno=@ap, ApellidoMaterno=@am, Telefono=@tel WHERE IdTutor=@id";
-                }
-
-                MySqlCommand cmd = new MySqlCommand(query, con);
-
-                cmd.Parameters.AddWithValue("@nom", nombre);
-                cmd.Parameters.AddWithValue("@ap", Apaterno);
-                cmd.Parameters.AddWithValue("@am", Amaterno);
-                cmd.Parameters.AddWithValue("@tel", NumTele);
-                cmd.Parameters.AddWithValue("@img", rutaGuardar);
-
-                if (IdTutor != 0)
-                    cmd.Parameters.AddWithValue("@id", IdTutor);
-
-                cmd.ExecuteNonQuery();
+                // Limpiar la selección para permitir subir otra imagen
+                rutaImagenSeleccionada = "";
             }
 
-            MessageBox.Show("Datos guardados correctamente");
+            MessageBox.Show("La imagen se a aguardado correctamente en .\nImagen guardada en: " + rutaGuardar);
 
-            if (string.IsNullOrWhiteSpace(textNom.Text) ||
-                string.IsNullOrWhiteSpace(texApat.Text) ||
-                string.IsNullOrWhiteSpace(textNUM.Text))
-            {
-                MessageBox.Show("Completa todos los campos obligatorios");
-                return;
-            }
 
-            textNom.Clear();
-            texApat.Clear();
-            textAMate.Clear();
-            textNUM.Clear();
-            picBoxImage.Image = null;
-            rutaImagenSeleccionada = "";
 
 
         }
@@ -172,20 +118,31 @@ namespace ProyectoGuarderia
 
             if (openFile.ShowDialog() == DialogResult.OK)
             {
-                rutaImagenSeleccionada = openFile.FileName;
-                using (FileStream fs = new FileStream(rutaImagenSeleccionada, FileMode.Open, FileAccess.Read))
-                {
-                    picBoxImage.Image = Image.FromStream(fs);
-                }
+                rutaImagenSeleccionada = openFile.FileName; //se guarda en la ruat temporal
+                picBoxImage.Image = Image.FromFile(rutaImagenSeleccionada); // muestra en pinture BOX
             }
+
 
         }
 
         private void picBoxImage_Click(object sender, EventArgs e)
         {
-            //vacio 
-        }
-    
 
+        }
+
+        private void listImag_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listImag.SelectedItem != null)
+            {
+                string nombreArchivo = listImag.SelectedItem.ToString();
+                string rutaImagen = Path.Combine(CarpF, nombreArchivo);
+
+                if (File.Exists(rutaImagen))
+                {
+                    picBoxImage.Image = Image.FromFile(rutaImagen);
+                }
+
+            }
+        }
     }
 }
