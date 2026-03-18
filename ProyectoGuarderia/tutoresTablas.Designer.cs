@@ -45,6 +45,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(568, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(204, 145);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -81,9 +82,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 24);
+            this.label1.Font = new System.Drawing.Font("Modern No. 20", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(48, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(137, 38);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tutores";
             // 
@@ -109,7 +111,7 @@
             // 
             // texbuscar
             // 
-            this.texbuscar.Location = new System.Drawing.Point(40, 51);
+            this.texbuscar.Location = new System.Drawing.Point(44, 77);
             this.texbuscar.Name = "texbuscar";
             this.texbuscar.Size = new System.Drawing.Size(271, 20);
             this.texbuscar.TabIndex = 8;
@@ -119,6 +121,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::ProyectoGuarderia.Properties.Resources.doodle_pop___fall_collection_print_artwork;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.texbuscar);
             this.Controls.Add(this.butedit);

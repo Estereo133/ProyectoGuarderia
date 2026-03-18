@@ -248,5 +248,8 @@
   <ItemGroup>
     <None Include="Resources\icons8-búsqueda-30.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doodle pop - fall collection print artwork.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
