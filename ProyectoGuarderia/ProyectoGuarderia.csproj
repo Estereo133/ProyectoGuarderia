@@ -158,6 +158,12 @@
     <Compile Include="Tutores.Designer.cs">
       <DependentUpon>Tutores.cs</DependentUpon>
     </Compile>
+    <Compile Include="tutoresTablas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tutoresTablas.Designer.cs">
+      <DependentUpon>tutoresTablas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Domicilio.resx">
       <DependentUpon>Domicilio.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +203,9 @@
     </Compile>
     <EmbeddedResource Include="Tutores.resx">
       <DependentUpon>Tutores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tutoresTablas.resx">
+      <DependentUpon>tutoresTablas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -238,6 +247,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-búsqueda-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doodle pop - fall collection print artwork.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

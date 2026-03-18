@@ -59,7 +59,7 @@ namespace ProyectoGuarderia
         private void btnTutores_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (var formTutores = new Form_Tutores())
+            using (var formTutores = new tutoresTablas())
             {
                 formTutores.ShowDialog();
             }
@@ -92,6 +92,16 @@ namespace ProyectoGuarderia
         private void Form_Menu_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEmergencia_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (var formNiños = new Emergencias_Num())
+            {
+                formNiños.ShowDialog();
+            }
+            this.Show();
         }
     }
     }
