@@ -102,6 +102,12 @@
     <Compile Include="Domicilio.Designer.cs">
       <DependentUpon>Domicilio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Emergencias_Num.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Emergencias_Num.Designer.cs">
+      <DependentUpon>Emergencias_Num.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </Compile>
     <EmbeddedResource Include="Domicilio.resx">
       <DependentUpon>Domicilio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emergencias_Num.resx">
+      <DependentUpon>Emergencias_Num.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -250,6 +259,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\doodle pop - fall collection print artwork.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\llamada-de-emergencia.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
