@@ -178,6 +178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::ProyectoGuarderia.Properties.Resources.doodle_pop___fall_collection_print_artwork;
             this.ClientSize = new System.Drawing.Size(621, 376);
             this.Controls.Add(this.butGuar);
             this.Controls.Add(this.textNom);

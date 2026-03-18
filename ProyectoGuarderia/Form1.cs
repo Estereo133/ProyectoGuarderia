@@ -93,6 +93,16 @@ namespace ProyectoGuarderia
         {
 
         }
+
+        private void btnEmergencia_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (var formNiños = new Emergencias_Num())
+            {
+                formNiños.ShowDialog();
+            }
+            this.Show();
+        }
     }
     }
 

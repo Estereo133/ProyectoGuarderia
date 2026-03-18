@@ -123,6 +123,16 @@ namespace ProyectoGuarderia.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap llamada_de_emergencia {
+            get {
+                object obj = ResourceManager.GetObject("llamada-de-emergencia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mano {
             get {
                 object obj = ResourceManager.GetObject("mano", resourceCulture);
