@@ -91,26 +91,26 @@ namespace ProyectoGuarderia
         {
             if (dataGridView1.CurrentRow != null)
             {
-                int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["IdTutor"].Value);
-
-                using (MySqlConnection con = new MySqlConnection(conexion))
+                if (dataGridView1.CurrentRow != null)
                 {
-                    con.Open();
-                    string query = "UPDATE tutores SET Nombre=@nom, ApellidoPaterno=@ap, ApellidoMaterno=@am, Telefono=@tel WHERE IdTutor=@id";
+                    Form_Tutores frm = new Form_Tutores();
 
-                    MySqlCommand cmd = new MySqlCommand(query, con);
-                    cmd.Parameters.AddWithValue("@nom", textNom.Text);
-                    cmd.Parameters.AddWithValue("@ap", texApat.Text);
-                    cmd.Parameters.AddWithValue("@am", textAMate.Text);
-                    cmd.Parameters.AddWithValue("@tel", textNUM.Text);
-                    cmd.Parameters.AddWithValue("@id", id);
+                    frm.IdTutor = Convert.ToInt32(dataGridView1.CurrentRow.Cells["IdTutor"].Value);
 
-                    cmd.ExecuteNonQuery();
+                    frm.textNom.Text = dataGridView1.CurrentRow.Cells["Nombre"].Value.ToString();
+                    frm.texApat.Text = dataGridView1.CurrentRow.Cells["ApellidoPaterno"].Value.ToString();
+                    frm.textAMate.Text = dataGridView1.CurrentRow.Cells["ApellidoMaterno"].Value.ToString();
+                    frm.textNUM.Text = dataGridView1.CurrentRow.Cells["Telefono"].Value.ToString();
+
+                    frm.ShowDialog();
+
+                    CargarDatos();
                 }
 
-                MessageBox.Show("Actualizado");
-                CargarDatos();
+
             }
+            //MessageBox.Show("Actualizado");
+            //CargarDatos();
         }
         
         private void texbuscar_TextChanged(object sender, EventArgs e)
@@ -136,33 +136,30 @@ namespace ProyectoGuarderia
             if (e.RowIndex >= 0)
             {
                 var fila = dataGridView1.Rows[e.RowIndex];
-                // llenar los espacios ç
 
-                textNom.Text = fila.Cells["Nombre"].Value?.ToString();
-                texApat.Text = fila.Cells["ApellidoPaterno"].Value?.ToString();
-                textAMate.Text = fila.Cells["ApellidoMaterno"].Value?.ToString();
-                textNUM.Text = fila.Cells["Telefono"].Value?.ToString();
-
-
-                // muestra las imagebes 
                 if (fila.Cells["RutaImagen"].Value != null)
                 {
                     string ruta = fila.Cells["RutaImagen"].Value.ToString();
 
                     if (File.Exists(ruta))
-                        pictureBox1.Image = null;
-                    using (FileStream fs = new FileStream(ruta, FileMode.Open, FileAccess.Read))
                     {
-                        pictureBox1.Image = Image.FromStream(fs);
+                        // Liberar imagen anterior (evita errores)
+                        if (pictureBox1.Image != null)
+                        {
+                            pictureBox1.Image.Dispose();
+                            pictureBox1.Image = null;
+                        }
+
+                        using (FileStream fs = new FileStream(ruta, FileMode.Open, FileAccess.Read))
+                        {
+                            pictureBox1.Image = Image.FromStream(fs);
+                        }
                     }
-
-                    textNom.Clear();
-                    texApat.Clear();
-                    textAMate.Clear();
-                    textNUM.Clear();
-                    pictureBox1.Image = null;
+                    else
+                    {
+                        pictureBox1.Image = null;
+                    }
                 }
-
             }
         }
     }

@@ -17,9 +17,11 @@ namespace ProyectoGuarderia
 {
     public partial class Form_Tutores : Form
     {
+        public int IdTutor = 0;
         string conexion = "Server=localhost;Database=guarderia;Uid=root;Pwd=root;";
         
         private string CarpF; // carpeta donde se guardaran todas las imagenes
+        
 
         public Form_Tutores()
         {
@@ -109,15 +111,28 @@ namespace ProyectoGuarderia
             using (MySqlConnection con = new MySqlConnection(conexion))
             {
                 con.Open();
-                string query = "INSERT INTO tutores (Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, RutaImagen) " +
-                               "VALUES (@nom, @ap, @am, @tel, @img)";
+
+                string query;
+
+                if (IdTutor == 0)
+                {
+                    query = "INSERT INTO tutores (Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, RutaImagen) VALUES (@nom,@ap,@am,@tel,@img)";
+                }
+                else
+                {
+                    query = "UPDATE tutores SET Nombre=@nom, ApellidoPaterno=@ap, ApellidoMaterno=@am, Telefono=@tel WHERE IdTutor=@id";
+                }
 
                 MySqlCommand cmd = new MySqlCommand(query, con);
+
                 cmd.Parameters.AddWithValue("@nom", nombre);
                 cmd.Parameters.AddWithValue("@ap", Apaterno);
                 cmd.Parameters.AddWithValue("@am", Amaterno);
                 cmd.Parameters.AddWithValue("@tel", NumTele);
                 cmd.Parameters.AddWithValue("@img", rutaGuardar);
+
+                if (IdTutor != 0)
+                    cmd.Parameters.AddWithValue("@id", IdTutor);
 
                 cmd.ExecuteNonQuery();
             }

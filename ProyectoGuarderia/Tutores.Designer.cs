@@ -207,16 +207,16 @@
         private System.Windows.Forms.PictureBox picBoxImage;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox texApat;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textAMate;
         private System.Windows.Forms.Button butCerrar;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textNUM;
         private MySql.Data.MySqlClient.MySqlConnection mySqlConnection1;
         private System.Windows.Forms.Button butImage;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
-        private System.Windows.Forms.TextBox textNom;
         private System.Windows.Forms.Button butGuar;
+        public System.Windows.Forms.TextBox texApat;
+        public System.Windows.Forms.TextBox textAMate;
+        public System.Windows.Forms.TextBox textNUM;
+        public System.Windows.Forms.TextBox textNom;
     }
 }
