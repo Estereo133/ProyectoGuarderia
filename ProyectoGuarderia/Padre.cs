@@ -54,6 +54,7 @@ namespace ProyectoGuarderia
                     txtTelefono.Text = reader["Telefono"].ToString();
                     txtDireccion.Text = reader["Direccion"].ToString();
                     idNinoSeleccionado = Convert.ToInt32(reader["IdNino"]);
+                    txtocupacion.Text = reader["Ocupacion"].ToString();
 
                     string ruta = reader["Image"].ToString();
 
@@ -90,24 +91,6 @@ namespace ProyectoGuarderia
         // CARGAR NIÑOS
         private void Form_Padre_Load(object sender, EventArgs e)
         {
-
-
-            if (idPadre != 0)
-            {
-                CargarPadre();
-            }
-
-            for (int i = 0; i < cmbNino.Items.Count; i++)
-            {
-                string item = cmbNino.Items[i].ToString();
-
-                if (item.StartsWith(idNinoSeleccionado.ToString() + " -"))
-                {
-                    cmbNino.SelectedIndex = i;
-                    break;
-                }
-            }
-
             try
             {
                 using (MySqlConnection conn = Conexion.conectar())
@@ -134,6 +117,24 @@ namespace ProyectoGuarderia
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+
+            //DESPUÉS de llenar el combo
+            if (idPadre != 0)
+            {
+                CargarPadre();
+
+                //AHORA sí seleccionar el niño
+                for (int i = 0; i < cmbNino.Items.Count; i++)
+                {
+                    string item = cmbNino.Items[i].ToString();
+
+                    if (item.StartsWith(idNinoSeleccionado.ToString() + " -"))
+                    {
+                        cmbNino.SelectedIndex = i;
+                        break;
+                    }
+                }
             }
         }
 
@@ -192,9 +193,9 @@ namespace ProyectoGuarderia
                     if (idPadre == 0)
                     {
                         query = @"INSERT INTO padres
-    (IdNino, Nombre, Telefono, Direccion, Image)
+    (IdNino, Nombre, Telefono, Direccion, Image,Ocupacion)
     VALUES
-    (@IdNino, @Nombre, @Telefono, @Direccion, @Image)";
+    (@IdNino, @Nombre, @Telefono, @Direccion, @Image,@Ocupacion)";
                     }
                     else
                     {
@@ -203,7 +204,8 @@ namespace ProyectoGuarderia
     Nombre=@Nombre,
     Telefono=@Telefono,
     Direccion=@Direccion,
-    Image=@Image
+    Image=@Image,
+    Ocupacion=@Ocupacion
     WHERE IdPadre=@IdPadre";
                     }
 
@@ -214,6 +216,7 @@ namespace ProyectoGuarderia
                     cmd.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
                     cmd.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
                     cmd.Parameters.AddWithValue("@Image", rutaGuardar);
+                    cmd.Parameters.AddWithValue("@Ocupacion", txtocupacion.Text);
 
                     if (idPadre != 0)
                     {

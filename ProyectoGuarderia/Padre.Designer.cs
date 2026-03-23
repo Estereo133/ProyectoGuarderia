@@ -54,7 +54,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(318, 33);
+            this.label1.Size = new System.Drawing.Size(464, 52);
             this.label1.TabIndex = 0;
             this.label1.Text = "Informacion del padre";
             // 
@@ -63,7 +63,7 @@
             this.cmbNino.FormattingEnabled = true;
             this.cmbNino.Location = new System.Drawing.Point(24, 128);
             this.cmbNino.Name = "cmbNino";
-            this.cmbNino.Size = new System.Drawing.Size(106, 21);
+            this.cmbNino.Size = new System.Drawing.Size(106, 28);
             this.cmbNino.TabIndex = 1;
             // 
             // label2
@@ -72,7 +72,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.Window;
             this.label2.Location = new System.Drawing.Point(32, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 13);
+            this.label2.Size = new System.Drawing.Size(126, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Seleccionar niño";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -83,7 +83,7 @@
             this.label3.BackColor = System.Drawing.SystemColors.Window;
             this.label3.Location = new System.Drawing.Point(48, 179);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.Size = new System.Drawing.Size(65, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Nombre";
             // 
@@ -91,14 +91,14 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(24, 224);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(100, 26);
             this.txtNombre.TabIndex = 4;
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(18, 311);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono.Size = new System.Drawing.Size(100, 26);
             this.txtTelefono.TabIndex = 5;
             // 
             // label4
@@ -107,7 +107,7 @@
             this.label4.BackColor = System.Drawing.SystemColors.Window;
             this.label4.Location = new System.Drawing.Point(43, 270);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.Size = new System.Drawing.Size(71, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Telefono";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -118,7 +118,7 @@
             this.label5.BackColor = System.Drawing.SystemColors.Window;
             this.label5.Location = new System.Drawing.Point(207, 81);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.Size = new System.Drawing.Size(75, 20);
             this.label5.TabIndex = 7;
             this.label5.Text = "Direccion";
             // 
@@ -126,7 +126,7 @@
             // 
             this.txtDireccion.Location = new System.Drawing.Point(182, 129);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(100, 20);
+            this.txtDireccion.Size = new System.Drawing.Size(100, 26);
             this.txtDireccion.TabIndex = 8;
             this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
             // 
@@ -135,7 +135,7 @@
             this.btnGuardar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnGuardar.Location = new System.Drawing.Point(430, 325);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(75, 39);
             this.btnGuardar.TabIndex = 9;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -146,7 +146,7 @@
             this.btnCancelar.BackColor = System.Drawing.Color.Red;
             this.btnCancelar.Location = new System.Drawing.Point(580, 325);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(75, 39);
             this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -169,7 +169,7 @@
             this.label6.BackColor = System.Drawing.SystemColors.Window;
             this.label6.Location = new System.Drawing.Point(201, 179);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 13);
+            this.label6.Size = new System.Drawing.Size(85, 20);
             this.label6.TabIndex = 12;
             this.label6.Text = "Ocupacion";
             // 
@@ -177,7 +177,7 @@
             // 
             this.txtocupacion.Location = new System.Drawing.Point(182, 224);
             this.txtocupacion.Name = "txtocupacion";
-            this.txtocupacion.Size = new System.Drawing.Size(100, 20);
+            this.txtocupacion.Size = new System.Drawing.Size(100, 26);
             this.txtocupacion.TabIndex = 13;
             // 
             // btnCargarFoto

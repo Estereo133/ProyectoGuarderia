@@ -50,6 +50,7 @@
             this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label1
             // 
@@ -70,6 +71,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(230, 26);
             this.txtBuscar.TabIndex = 3;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // dataGridView1
             // 
@@ -80,6 +82,7 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(809, 259);
             this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // cboEstado
             // 
@@ -89,6 +92,7 @@
             this.cboEstado.Size = new System.Drawing.Size(121, 28);
             this.cboEstado.TabIndex = 7;
             this.cboEstado.Text = "Estado";
+            this.cboEstado.SelectedIndexChanged += new System.EventHandler(this.cboEstado_SelectedIndexChanged);
             // 
             // cbxTipoPago
             // 
@@ -98,6 +102,7 @@
             this.cbxTipoPago.Size = new System.Drawing.Size(134, 28);
             this.cbxTipoPago.TabIndex = 8;
             this.cbxTipoPago.Text = "Tipo de pago";
+            this.cbxTipoPago.SelectedIndexChanged += new System.EventHandler(this.cbxTipoPago_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -108,6 +113,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Registrar pago";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -118,6 +124,7 @@
             this.button2.TabIndex = 10;
             this.button2.Text = "Resgistrar abono";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnSalir
             // 
