@@ -132,6 +132,12 @@
     <Compile Include="Inf_comNIno.Designer.cs">
       <DependentUpon>Inf_comNIno.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuDes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuDes.Designer.cs">
+      <DependentUpon>MenuDes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Niños.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inf_comNIno.resx">
       <DependentUpon>Inf_comNIno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuDes.resx">
+      <DependentUpon>MenuDes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Niños.resx">
       <DependentUpon>Niños.cs</DependentUpon>
