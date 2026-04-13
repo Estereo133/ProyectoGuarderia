@@ -70,7 +70,7 @@
             this.paneMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.paneMenu.Location = new System.Drawing.Point(0, 0);
             this.paneMenu.Name = "paneMenu";
-            this.paneMenu.Size = new System.Drawing.Size(300, 561);
+            this.paneMenu.Size = new System.Drawing.Size(300, 635);
             this.paneMenu.TabIndex = 0;
             this.paneMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.paneMenu_Paint);
             // 
@@ -88,6 +88,7 @@
             this.button15.Text = "Pagos";
             this.button15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // SubPanel_Tutores
             // 
@@ -115,6 +116,7 @@
             this.button_SUBtutores3.Text = "button10";
             this.button_SUBtutores3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_SUBtutores3.UseVisualStyleBackColor = true;
+            this.button_SUBtutores3.Click += new System.EventHandler(this.button_SUBtutores3_Click);
             // 
             // button_SUBtutores2
             // 
@@ -130,6 +132,7 @@
             this.button_SUBtutores2.Text = "button11";
             this.button_SUBtutores2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_SUBtutores2.UseVisualStyleBackColor = true;
+            this.button_SUBtutores2.Click += new System.EventHandler(this.button_SUBtutores2_Click);
             // 
             // button_SUBtutores1
             // 
@@ -145,6 +148,7 @@
             this.button_SUBtutores1.Text = "button14";
             this.button_SUBtutores1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_SUBtutores1.UseVisualStyleBackColor = true;
+            this.button_SUBtutores1.Click += new System.EventHandler(this.button_SUBtutores1_Click);
             // 
             // button5
             // 
@@ -160,6 +164,7 @@
             this.button5.Text = "Tutores";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // SubPanel_Padres
             // 
@@ -186,6 +191,7 @@
             this.button_SUBpadres2.Text = "button12";
             this.button_SUBpadres2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_SUBpadres2.UseVisualStyleBackColor = true;
+            this.button_SUBpadres2.Click += new System.EventHandler(this.button_SUBpadres2_Click);
             // 
             // button_SUBpadres1
             // 
@@ -201,6 +207,7 @@
             this.button_SUBpadres1.Text = "button_SUBpadres";
             this.button_SUBpadres1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_SUBpadres1.UseVisualStyleBackColor = true;
+            this.button_SUBpadres1.Click += new System.EventHandler(this.button_SUBpadres1_Click);
             // 
             // butto_padres
             // 
@@ -216,6 +223,7 @@
             this.butto_padres.Text = "Padres";
             this.butto_padres.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.butto_padres.UseVisualStyleBackColor = true;
+            this.butto_padres.Click += new System.EventHandler(this.butto_padres_Click);
             // 
             // SubPanel_Niños
             // 
@@ -333,7 +341,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 561);
+            this.ClientSize = new System.Drawing.Size(934, 635);
             this.Controls.Add(this.paneMenu);
             this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "MenuDes";

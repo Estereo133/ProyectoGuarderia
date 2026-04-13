@@ -57,7 +57,7 @@ namespace ProyectoGuarderia
             }
             
         }
-
+        //NIÑOS
         private void button_niños_Click(object sender, EventArgs e)
         {
             showsubmenu(SubPanel_Niños);
@@ -85,6 +85,58 @@ namespace ProyectoGuarderia
         }
 
         private void button4_Click(object sender, EventArgs e)
+        {
+            //aqui ponen lo que vallan a poner
+
+            hideSubmenu();
+        }
+        //PADRES
+        private void butto_padres_Click(object sender, EventArgs e)
+        {
+            showsubmenu(SubPanel_Padres);
+        }
+
+        private void button_SUBpadres1_Click(object sender, EventArgs e)
+        {
+            //aqui ponen lo que vallan a poner
+
+            hideSubmenu();
+        }
+
+        private void button_SUBpadres2_Click(object sender, EventArgs e)
+        {
+            //aqui ponen lo que vallan a poner
+
+            hideSubmenu();
+        }
+        //TUTORES
+        private void button5_Click(object sender, EventArgs e)
+        {
+            showsubmenu(SubPanel_Tutores);
+        }
+
+        private void button_SUBtutores1_Click(object sender, EventArgs e)
+        {
+            //aqui ponen lo que vallan a poner
+
+            hideSubmenu();
+        }
+
+        private void button_SUBtutores2_Click(object sender, EventArgs e)
+        {
+            //aqui ponen lo que vallan a poner
+
+            hideSubmenu();
+        }
+
+        private void button_SUBtutores3_Click(object sender, EventArgs e)
+        {
+            //aqui ponen lo que vallan a poner
+
+            hideSubmenu();
+        }
+        //pago
+        private void button15_Click(object sender, EventArgs e)
         {
             //aqui ponen lo que vallan a poner
 
