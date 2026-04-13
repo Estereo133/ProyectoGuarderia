@@ -16,24 +16,79 @@ namespace ProyectoGuarderia
         public MenuDes()
         {
             InitializeComponent();
+            OcultarSubMenus();
+
         }
 
         private void paneMenu_Paint(object sender, PaintEventArgs e)
         {
 
         }
-       
+
         private void MenuDes_Load(object sender, EventArgs e)
         {
             //ocultamos tiodfdo los paneles  de sub menu al iniciar la app
-           
-            OcultarSubMenus();
+
+            
         }
         private void OcultarSubMenus()
         {
             SubPanel_Niños.Visible = false;
             SubPanel_Padres.Visible = false;
             SubPanel_Tutores.Visible = false;
+        }
+        //mostrar sub menu
+        private void hideSubmenu() {
+            if (SubPanel_Niños.Visible == true)
+                SubPanel_Niños.Visible = false;
+            if (SubPanel_Padres.Visible == true)
+                SubPanel_Padres.Visible = false;
+            if (SubPanel_Tutores.Visible == true)
+                SubPanel_Tutores.Visible = false;
+        }
+        private void showsubmenu(Panel subMenu) {
+            if (subMenu.Visible == false)
+            {
+                hideSubmenu();
+                subMenu.Visible = true;
+            }
+            else { 
+                subMenu.Visible = false;
+            }
+            
+        }
+
+        private void button_niños_Click(object sender, EventArgs e)
+        {
+            showsubmenu(SubPanel_Niños);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //aqui ponen lo que vallan a poner
+
+            hideSubmenu();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //aqui ponen lo que vallan a poner
+
+            hideSubmenu();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //aqui ponen lo que vallan a poner
+
+            hideSubmenu();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //aqui ponen lo que vallan a poner
+
+            hideSubmenu();
         }
     }
 }
