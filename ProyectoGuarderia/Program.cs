@@ -16,7 +16,7 @@ namespace ProyectoGuarderia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuDes());
+            Application.Run(new Form_Menu());
         }
     }
 }
