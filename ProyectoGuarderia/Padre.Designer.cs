@@ -75,7 +75,6 @@
             this.label2.Size = new System.Drawing.Size(126, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Seleccionar niño";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -110,7 +109,6 @@
             this.label4.Size = new System.Drawing.Size(71, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Telefono";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -128,7 +126,6 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 26);
             this.txtDireccion.TabIndex = 8;
-            this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
             // 
             // btnGuardar
             // 
@@ -161,7 +158,6 @@
             this.pictureBoxPadre.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxPadre.TabIndex = 11;
             this.pictureBoxPadre.TabStop = false;
-            this.pictureBoxPadre.DoubleClick += new System.EventHandler(this.pbPadre_DoubleClick);
             // 
             // label6
             // 

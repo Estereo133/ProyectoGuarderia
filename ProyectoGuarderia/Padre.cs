@@ -1,43 +1,57 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO; // Necesario para manejar archivos
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-
-
+// 📸 CÁMARA
+using Accord.Video;
+using Accord.Video.DirectShow;
 
 namespace ProyectoGuarderia
 {
-
     public partial class Form_Padre : Form
     {
         int idPadre = 0;
         int idNinoSeleccionado = 0;
+
         string rutaImagen = "";
+
+        // 📸 VARIABLES DE CÁMARA
+        FilterInfoCollection dispositivos;
+        VideoCaptureDevice camara;
 
         public Form_Padre()
         {
             InitializeComponent();
-            
         }
+
         public Form_Padre(int id)
         {
             InitializeComponent();
             idPadre = id;
         }
+
+        // ============================
+        // 🔥 VALIDACIONES
+        // ============================
+        private bool SoloLetras(string texto)
+        {
+            return texto.All(c => char.IsLetter(c) || char.IsWhiteSpace(c));
+        }
+
+        private bool SoloNumeros(string texto)
+        {
+            return texto.All(char.IsDigit);
+        }
+
+        // ============================
+        // 📥 CARGAR PADRE
+        // ============================
         private void CargarPadre()
         {
-            string conexion = "server=localhost;database=guarderia;uid=root;pwd=root;";
-            MySqlConnection conn = new MySqlConnection(conexion);
-
-            try
+            using (MySqlConnection conn = Conexion.conectar())
             {
                 conn.Open();
 
@@ -53,42 +67,23 @@ namespace ProyectoGuarderia
                     txtNombre.Text = reader["Nombre"].ToString();
                     txtTelefono.Text = reader["Telefono"].ToString();
                     txtDireccion.Text = reader["Direccion"].ToString();
-                    idNinoSeleccionado = Convert.ToInt32(reader["IdNino"]);
                     txtocupacion.Text = reader["Ocupacion"].ToString();
+
+                    idNinoSeleccionado = Convert.ToInt32(reader["IdNino"]);
 
                     string ruta = reader["Image"].ToString();
 
                     if (!string.IsNullOrEmpty(ruta) && File.Exists(ruta))
-                    {
                         pictureBoxPadre.Image = Image.FromFile(ruta);
-                    }
                     else
-                    {
                         pictureBoxPadre.Image = Properties.Resources.usuario;
-                    }
-
-
-
-             }
-
-                conn.Close();
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
-        }
-        private void label2_Click(object sender, EventArgs e)
-        {
-            // código o dejar vacío
         }
 
-        private void pbPadre_DoubleClick(object sender, EventArgs e)
-        {
-            // código o dejar vacío
-        }
-        // CARGAR NIÑOS
+        // ============================
+        // 📋 LOAD
+        // ============================
         private void Form_Padre_Load(object sender, EventArgs e)
         {
             try
@@ -98,7 +93,6 @@ namespace ProyectoGuarderia
                     conn.Open();
 
                     string query = "SELECT IdNino, Nombre FROM nino";
-
                     MySqlCommand cmd = new MySqlCommand(query, conn);
 
                     MySqlDataReader reader = cmd.ExecuteReader();
@@ -108,9 +102,24 @@ namespace ProyectoGuarderia
                     while (reader.Read())
                     {
                         cmbNino.Items.Add(
-                        reader["IdNino"].ToString() +
-                        " - " +
-                        reader["Nombre"].ToString());
+                            reader["IdNino"].ToString() + " - " +
+                            reader["Nombre"].ToString());
+                    }
+                }
+
+                if (idPadre != 0)
+                {
+                    CargarPadre();
+
+                    for (int i = 0; i < cmbNino.Items.Count; i++)
+                    {
+                        string item = cmbNino.Items[i].ToString();
+
+                        if (item.StartsWith(idNinoSeleccionado.ToString() + " -"))
+                        {
+                            cmbNino.SelectedIndex = i;
+                            break;
+                        }
                     }
                 }
             }
@@ -118,42 +127,104 @@ namespace ProyectoGuarderia
             {
                 MessageBox.Show(ex.Message);
             }
+        }
 
-            //DESPUÉS de llenar el combo
-            if (idPadre != 0)
+        // ============================
+        // 📸 FOTO (CÁMARA + ARCHIVO)
+        // ============================
+        private void btnCargarFoto_Click(object sender, EventArgs e)
+        {
+            DialogResult opcion = MessageBox.Show(
+                "¿Deseas tomar foto con la cámara?",
+                "Foto",
+                MessageBoxButtons.YesNoCancel,
+                MessageBoxIcon.Question
+            );
+
+            // 📸 CÁMARA
+            if (opcion == DialogResult.Yes)
             {
-                CargarPadre();
+                dispositivos = new FilterInfoCollection(FilterCategory.VideoInputDevice);
 
-                //AHORA sí seleccionar el niño
-                for (int i = 0; i < cmbNino.Items.Count; i++)
+                if (dispositivos.Count > 0)
                 {
-                    string item = cmbNino.Items[i].ToString();
+                    camara = new VideoCaptureDevice(dispositivos[0].MonikerString);
 
-                    if (item.StartsWith(idNinoSeleccionado.ToString() + " -"))
+                    camara.NewFrame += (s, ev) =>
                     {
-                        cmbNino.SelectedIndex = i;
-                        break;
+                        Bitmap imagen = (Bitmap)ev.Frame.Clone();
+                        pictureBoxPadre.Image = imagen;
+                        pictureBoxPadre.SizeMode = PictureBoxSizeMode.StretchImage;
+                    };
+
+                    camara.Start();
+
+                    MessageBox.Show("Cámara activada.\nPresiona OK para tomar la foto.");
+
+                    if (pictureBoxPadre.Image == null)
+                    {
+                        MessageBox.Show("No se pudo capturar la imagen");
+                        return;
                     }
+
+                    string rutaBase = @"C:\Users\rosar\OneDrive\Desktop\PG\ProyectoGuarderia\bin\Debug\FotosPadre";
+
+                    if (!Directory.Exists(rutaBase))
+                        Directory.CreateDirectory(rutaBase);
+
+                    string identificador = DateTime.Now.ToString("yyyyMMddHHmmss");
+                    string rutaFinal = Path.Combine(rutaBase, $"Padre_{identificador}.jpg");
+
+                    pictureBoxPadre.Image.Save(rutaFinal, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                    rutaImagen = rutaFinal;
+
+                    MessageBox.Show("Foto guardada correctamente ✅");
+
+                    // 🔴 DETENER CÁMARA
+                    if (camara != null && camara.IsRunning)
+                    {
+                        camara.SignalToStop();
+                        camara.WaitForStop();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se detectó cámara");
+                }
+            }
+
+            // 🖼️ ARCHIVO
+            else if (opcion == DialogResult.No)
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Filter = "Imagen|*.jpg;*.png;*.jpeg";
+
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    pictureBoxPadre.Image = Image.FromFile(ofd.FileName);
+                    pictureBoxPadre.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    string rutaBase = @"C:\Users\rosar\OneDrive\Desktop\PG\ProyectoGuarderia\bin\Debug\FotosPadre";
+
+                    if (!Directory.Exists(rutaBase))
+                        Directory.CreateDirectory(rutaBase);
+
+                    string identificador = DateTime.Now.ToString("yyyyMMddHHmmss");
+                    string rutaFinal = Path.Combine(rutaBase, $"Padre_{identificador}.jpg");
+
+                    pictureBoxPadre.Image.Save(rutaFinal, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                    rutaImagen = rutaFinal;
+
+                    MessageBox.Show("Imagen guardada correctamente ✅");
                 }
             }
         }
 
-        // DOBLE CLICK PARA SUBIR FOTO
-        private void pictureBox1_DoubleClick(object sender, EventArgs e)
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-
-            ofd.Filter = "Imagen|*.jpg;*.png;*.jpeg";
-
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                rutaImagen = ofd.FileName;
-
-                pictureBoxPadre.Image = Image.FromFile(rutaImagen);
-            }
-        }
-
-        // GUARDAR
+        // ============================
+        // 💾 GUARDAR
+        // ============================
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -164,49 +235,73 @@ namespace ProyectoGuarderia
                     return;
                 }
 
-                string idNino =
-                cmbNino.SelectedItem.ToString().Split('-')[0].Trim();
-
-                string rutaGuardar = "";
-
-                if (rutaImagen != "")
+                if (string.IsNullOrWhiteSpace(txtNombre.Text))
                 {
-                    string carpeta =
-                    Application.StartupPath + @"\FotosPadres\";
-
-                    if (!Directory.Exists(carpeta))
-                        Directory.CreateDirectory(carpeta);
-
-                    string nombreArchivo =
-                    Guid.NewGuid().ToString() + ".jpg";
-
-                    rutaGuardar = carpeta + nombreArchivo;
-
-                    File.Copy(rutaImagen, rutaGuardar, true);
+                    MessageBox.Show("Nombre obligatorio");
+                    return;
                 }
+
+                if (!SoloLetras(txtNombre.Text))
+                {
+                    MessageBox.Show("El nombre no debe tener números");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtTelefono.Text))
+                {
+                    MessageBox.Show("Teléfono obligatorio");
+                    return;
+                }
+
+                if (!SoloNumeros(txtTelefono.Text) || txtTelefono.Text.Length < 10)
+                {
+                    MessageBox.Show("Teléfono inválido");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtDireccion.Text))
+                {
+                    MessageBox.Show("Dirección obligatoria");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtocupacion.Text))
+                {
+                    MessageBox.Show("Ocupación obligatoria");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(rutaImagen))
+                {
+                    MessageBox.Show("Debes agregar una foto");
+                    return;
+                }
+
+                string idNino = cmbNino.SelectedItem.ToString().Split('-')[0].Trim();
 
                 using (MySqlConnection conn = Conexion.conectar())
                 {
                     conn.Open();
+
                     string query;
 
                     if (idPadre == 0)
                     {
                         query = @"INSERT INTO padres
-    (IdNino, Nombre, Telefono, Direccion, Image,Ocupacion)
-    VALUES
-    (@IdNino, @Nombre, @Telefono, @Direccion, @Image,@Ocupacion)";
+                        (IdNino, Nombre, Telefono, Direccion, Image, Ocupacion)
+                        VALUES
+                        (@IdNino, @Nombre, @Telefono, @Direccion, @Image, @Ocupacion)";
                     }
                     else
                     {
                         query = @"UPDATE padres SET
-    IdNino=@IdNino,
-    Nombre=@Nombre,
-    Telefono=@Telefono,
-    Direccion=@Direccion,
-    Image=@Image,
-    Ocupacion=@Ocupacion
-    WHERE IdPadre=@IdPadre";
+                        IdNino=@IdNino,
+                        Nombre=@Nombre,
+                        Telefono=@Telefono,
+                        Direccion=@Direccion,
+                        Image=@Image,
+                        Ocupacion=@Ocupacion
+                        WHERE IdPadre=@IdPadre";
                     }
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -215,21 +310,18 @@ namespace ProyectoGuarderia
                     cmd.Parameters.AddWithValue("@Nombre", txtNombre.Text);
                     cmd.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
                     cmd.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
-                    cmd.Parameters.AddWithValue("@Image", rutaGuardar);
+                    cmd.Parameters.AddWithValue("@Image", rutaImagen);
                     cmd.Parameters.AddWithValue("@Ocupacion", txtocupacion.Text);
 
                     if (idPadre != 0)
-                    {
                         cmd.Parameters.AddWithValue("@IdPadre", idPadre);
-                    }
 
                     cmd.ExecuteNonQuery();
-                    this.Close();
                 }
 
-                MessageBox.Show("Padre guardado correctamente");
-
+                MessageBox.Show("Padre guardado correctamente ✅");
                 Limpiar();
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -237,44 +329,36 @@ namespace ProyectoGuarderia
             }
         }
 
+        // ============================
+        // 🧹 LIMPIAR
+        // ============================
         private void Limpiar()
         {
             txtNombre.Clear();
             txtTelefono.Clear();
             txtDireccion.Clear();
+            txtocupacion.Clear();
 
             cmbNino.SelectedIndex = -1;
-
             pictureBoxPadre.Image = null;
 
-            
+            rutaImagen = "";
         }
 
+        // ============================
+        // 🔴 EVENTOS
+        // ============================
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void Form_Padre_FormClosing(object sender, FormClosingEventArgs e)
         {
-
-        }
-
-        private void txtDireccion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        string rutaImagenPadre = "";
-
-        private void btnCargarFoto_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Imagenes|*.jpg;*.png;*.jpeg";
-
-            if (ofd.ShowDialog() == DialogResult.OK)
+            if (camara != null && camara.IsRunning)
             {
-                rutaImagenPadre = ofd.FileName;
-                pictureBoxPadre.Image = Image.FromFile(rutaImagenPadre);
+                camara.SignalToStop();
+                camara.WaitForStop();
             }
         }
     }
