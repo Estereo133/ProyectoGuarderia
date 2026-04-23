@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.IO;
 
-// ✅ LIBRERÍAS CORRECTAS
 using Accord.Video;
 using Accord.Video.DirectShow;
 
@@ -20,7 +13,6 @@ namespace ProyectoGuarderia
     {
         string rutaImagen = "";
 
-        // 📸 VARIABLES DE CÁMARA
         FilterInfoCollection dispositivos;
         VideoCaptureDevice camara;
 
@@ -31,208 +23,197 @@ namespace ProyectoGuarderia
 
         private void Form_Niño_Load(object sender, EventArgs e)
         {
-            cmbSexo.Items.Clear();
-            cmbSexo.Items.Add("Masculino");
-            cmbSexo.Items.Add("Femenino");
             cmbSexo.SelectedIndex = -1;
-
             dtpFechaRegistro.Value = DateTime.Now;
-        }
 
-        private void btnAgregarPadre_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-
-            using (var formPadre = new Form_Padre())
-            {
-                formPadre.ShowDialog();
-            }
-
-            this.Show();
+            // 🔥 ACTIVAR CURP AUTOMÁTICA
+            txtNombre.TextChanged += (s, ev) => ActualizarCURP();
+            txtApaterno.TextChanged += (s, ev) => ActualizarCURP();
+            txtAmaterno.TextChanged += (s, ev) => ActualizarCURP();
+            dtpFechaNacimiento.ValueChanged += (s, ev) => ActualizarCURP();
+            cmbSexo.SelectedIndexChanged += (s, ev) => ActualizarCURP();
         }
 
         // ============================
-        // 📸 SELECCIONAR / TOMAR FOTO
+        // 📸 FOTO
         // ============================
         private void btnSeleccionarFoto_Click(object sender, EventArgs e)
         {
             DialogResult opcion = MessageBox.Show(
-                "¿Deseas tomar una foto con la cámara?",
-                "Seleccionar opción",
-                MessageBoxButtons.YesNoCancel,
-                MessageBoxIcon.Question
+                "¿Deseas usar la cámara?",
+                "Foto",
+                MessageBoxButtons.YesNoCancel
             );
 
-            // 📸 USAR CÁMARA
             if (opcion == DialogResult.Yes)
             {
                 dispositivos = new FilterInfoCollection(FilterCategory.VideoInputDevice);
 
-                if (dispositivos.Count > 0)
+                if (dispositivos.Count == 0)
                 {
-                    camara = new VideoCaptureDevice(dispositivos[0].MonikerString);
-
-                    camara.NewFrame += new NewFrameEventHandler((s, ev) =>
-                    {
-                        Bitmap imagen = (Bitmap)ev.Frame.Clone();
-                        pictureBoxFoto.Image = imagen;
-                        pictureBoxFoto.SizeMode = PictureBoxSizeMode.StretchImage;
-                    });
-
-                    camara.Start();
-
-                    MessageBox.Show("Cámara activada.\nPresiona OK para tomar la foto.");
-
-                    if (pictureBoxFoto.Image == null)
-                    {
-                        MessageBox.Show("No se pudo capturar la imagen");
-                        return;
-                    }
-
-                    string rutaBase = @"C:\Users\rosar\OneDrive\Desktop\PG\ProyectoGuarderia\bin\Debug\FotosAlumno";
-
-                    if (!Directory.Exists(rutaBase))
-                        Directory.CreateDirectory(rutaBase);
-
-                    string identificador = DateTime.Now.ToString("yyyyMMddHHmmss");
-                    string rutaFinal = Path.Combine(rutaBase, $"Alumno_{identificador}.jpg");
-
-                    pictureBoxFoto.Image.Save(rutaFinal, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-                    rutaImagen = rutaFinal;
-
-                    MessageBox.Show("Foto guardada correctamente ✅");
-
-                    // Detener cámara
-                    if (camara != null && camara.IsRunning)
-                    {
-                        camara.SignalToStop();
-                        camara.WaitForStop();
-                    }
+                    MessageBox.Show("No hay cámara");
+                    return;
                 }
-                else
+
+                camara = new VideoCaptureDevice(dispositivos[0].MonikerString);
+
+                camara.NewFrame += (s, ev) =>
                 {
-                    MessageBox.Show("No se detectó cámara");
+                    pictureBoxFoto.Image = (System.Drawing.Bitmap)ev.Frame.Clone();
+                };
+
+                camara.Start();
+
+                MessageBox.Show("Presiona OK para capturar");
+
+                if (pictureBoxFoto.Image == null)
+                {
+                    MessageBox.Show("Error al capturar");
+                    return;
                 }
+
+                string rutaBase = @"C:\Users\rosar\OneDrive\Desktop\PG\ProyectoGuarderia\bin\Debug\FotosAlumno";
+
+                if (!Directory.Exists(rutaBase))
+                    Directory.CreateDirectory(rutaBase);
+
+                string ruta = Path.Combine(rutaBase, "Alumno_" + DateTime.Now.Ticks + ".jpg");
+
+                pictureBoxFoto.Image.Save(ruta);
+                rutaImagen = ruta;
+
+                if (camara.IsRunning)
+                {
+                    camara.SignalToStop();
+                    camara.WaitForStop();
+                }
+
+                MessageBox.Show("Foto guardada");
             }
-
-            // 🖼️ SELECCIONAR ARCHIVO
             else if (opcion == DialogResult.No)
             {
                 OpenFileDialog ofd = new OpenFileDialog();
-
-                ofd.Title = "Seleccionar foto";
-                ofd.Filter = "Imagen (*.jpg; *.png; *.jpeg)|*.jpg;*.png;*.jpeg";
+                ofd.Filter = "Imagen|*.jpg;*.png";
 
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    pictureBoxFoto.Image = Image.FromFile(ofd.FileName);
-                    pictureBoxFoto.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureBoxFoto.Image = System.Drawing.Image.FromFile(ofd.FileName);
 
                     string rutaBase = @"C:\Users\rosar\OneDrive\Desktop\PG\ProyectoGuarderia\bin\Debug\FotosAlumno";
 
                     if (!Directory.Exists(rutaBase))
                         Directory.CreateDirectory(rutaBase);
 
-                    string identificador = DateTime.Now.ToString("yyyyMMddHHmmss");
-                    string rutaFinal = Path.Combine(rutaBase, $"Alumno_{identificador}.jpg");
+                    string ruta = Path.Combine(rutaBase, "Alumno_" + DateTime.Now.Ticks + ".jpg");
 
-                    pictureBoxFoto.Image.Save(rutaFinal, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-                    rutaImagen = rutaFinal;
-
-                    MessageBox.Show("Imagen guardada correctamente ✅");
+                    pictureBoxFoto.Image.Save(ruta);
+                    rutaImagen = ruta;
                 }
             }
         }
 
         // ============================
-        // 💾 GUARDAR NIÑO
+        // 🔥 GENERAR CURP
+        // ============================
+        private string GenerarCURP()
+        {
+            if (txtNombre.Text == "" || txtApaterno.Text == "" || txtAmaterno.Text == "")
+                return "";
+
+            string nom = txtNombre.Text.ToUpper();
+            string ap = txtApaterno.Text.ToUpper();
+            string am = txtAmaterno.Text.ToUpper();
+
+            char v = 'X';
+            for (int i = 1; i < ap.Length; i++)
+            {
+                if ("AEIOU".Contains(ap[i]))
+                {
+                    v = ap[i];
+                    break;
+                }
+            }
+
+            string fecha = dtpFechaNacimiento.Value.ToString("yyMMdd");
+            string sexo = cmbSexo.Text == "Masculino" ? "H" : "M";
+
+            return $"{ap[0]}{v}{am[0]}{nom[0]}{fecha}{sexo}";
+        }
+
+        private void ActualizarCURP()
+        {
+            txtCurp.Text = GenerarCURP();
+        }
+
+        // ============================
+        // 💾 GUARDAR
         // ============================
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
+                if (txtNombre.Text == "" || txtApaterno.Text == "" || txtAmaterno.Text == "")
+                {
+                    MessageBox.Show("Completa los datos");
+                    return;
+                }
+
+                if (cmbSexo.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Selecciona sexo");
+                    return;
+                }
+
+                if (rutaImagen == "")
+                {
+                    MessageBox.Show("Agrega foto");
+                    return;
+                }
+
                 using (MySqlConnection conn = Conexion.conectar())
                 {
                     conn.Open();
 
-                    string query = @"INSERT INTO Nino
-                    (
-                        Nombre,
-                        Apaterno,
-                        Amaterno,
-                        CURP,
-                        FechaNacimiento,
-                        Sexo,
-                        Foto,
-                        FechaRegistro
-                    )
+                    string q = @"INSERT INTO Nino
+                    (Nombre,Apaterno,Amaterno,CURP,FechaNacimiento,Sexo,Foto,FechaRegistro)
                     VALUES
-                    (
-                        @Nombre,
-                        @Apaterno,
-                        @Amaterno,
-                        @CURP,
-                        @FechaNacimiento,
-                        @Sexo,
-                        @Foto,
-                        @FechaRegistro
-                    )";
+                    (@n,@ap,@am,@c,@fn,@s,@f,@fr)";
 
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    MySqlCommand cmd = new MySqlCommand(q, conn);
 
-                    cmd.Parameters.AddWithValue("@Nombre", txtNombre.Text);
-                    cmd.Parameters.AddWithValue("@Apaterno", txtApaterno.Text);
-                    cmd.Parameters.AddWithValue("@Amaterno", txtAmaterno.Text);
-                    cmd.Parameters.AddWithValue("@CURP", txtCurp.Text);
-                    cmd.Parameters.AddWithValue("@FechaNacimiento", dtpFechaNacimiento.Value.Date);
-                    cmd.Parameters.AddWithValue("@Sexo", cmbSexo.Text);
-                    cmd.Parameters.AddWithValue("@Foto", rutaImagen);
-                    cmd.Parameters.AddWithValue("@FechaRegistro", dtpFechaRegistro.Value);
+                    cmd.Parameters.AddWithValue("@n", txtNombre.Text);
+                    cmd.Parameters.AddWithValue("@ap", txtApaterno.Text);
+                    cmd.Parameters.AddWithValue("@am", txtAmaterno.Text);
+                    cmd.Parameters.AddWithValue("@c", txtCurp.Text);
+                    cmd.Parameters.AddWithValue("@fn", dtpFechaNacimiento.Value);
+                    cmd.Parameters.AddWithValue("@s", cmbSexo.Text);
+                    cmd.Parameters.AddWithValue("@f", rutaImagen);
+                    cmd.Parameters.AddWithValue("@fr", dtpFechaRegistro.Value);
 
                     cmd.ExecuteNonQuery();
                 }
 
-                MessageBox.Show("Niño registrado correctamente ✅");
-
-                LimpiarCampos();
+                MessageBox.Show("Guardado correctamente");
+                Limpiar();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar: " + ex.Message);
+                MessageBox.Show(ex.Message);
             }
         }
 
+        // ============================
+        // 🔴 EVENTOS QUE FALTABAN
+        // ============================
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void LimpiarCampos()
-        {
-            txtNombre.Clear();
-            txtApaterno.Clear();
-            txtAmaterno.Clear();
-
-            dtpFechaNacimiento.Value = DateTime.Now;
-            dtpFechaRegistro.Value = DateTime.Now;
-
-            cmbSexo.SelectedIndex = -1;
-
-            pictureBoxFoto.Image = null;
-            rutaImagen = "";
-        }
-
         private void btnAgTutor_Click(object sender, EventArgs e)
         {
             this.Hide();
-
-            using (var formTutor = new Form_Tutores())
-            {
-                formTutor.ShowDialog();
-            }
-
+            new Form_Tutores().ShowDialog();
             this.Show();
         }
 
@@ -240,13 +221,18 @@ namespace ProyectoGuarderia
         {
             if (txtCurp.Text.Length > 18)
             {
-                MessageBox.Show("El CURP no puede tener más de 18 caracteres.");
                 txtCurp.Text = txtCurp.Text.Substring(0, 18);
                 txtCurp.SelectionStart = txtCurp.Text.Length;
             }
         }
 
-        // 🔴 Cerrar cámara al cerrar formulario
+        private void btnAgregarPadre_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Form_Padre().ShowDialog();
+            this.Show();
+        }
+
         private void Form_Niño_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (camara != null && camara.IsRunning)
@@ -254,6 +240,16 @@ namespace ProyectoGuarderia
                 camara.SignalToStop();
                 camara.WaitForStop();
             }
+        }
+
+        private void Limpiar()
+        {
+            txtNombre.Clear();
+            txtApaterno.Clear();
+            txtAmaterno.Clear();
+            txtCurp.Clear();
+            pictureBoxFoto.Image = null;
+            cmbSexo.SelectedIndex = -1;
         }
     }
 }
