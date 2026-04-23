@@ -100,7 +100,7 @@
             this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 10;
             this.label1.Text = "Nombre";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+           
             // 
             // label2
             // 
@@ -174,7 +174,7 @@
             this.pictureBoxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxFoto.TabIndex = 17;
             this.pictureBoxFoto.TabStop = false;
-            this.pictureBoxFoto.Click += new System.EventHandler(this.pictureBoxFoto_Click);
+      
             // 
             // btnSeleccionarFoto
             // 
@@ -203,7 +203,7 @@
             this.dtpFechaRegistro.Name = "dtpFechaRegistro";
             this.dtpFechaRegistro.Size = new System.Drawing.Size(200, 26);
             this.dtpFechaRegistro.TabIndex = 20;
-            this.dtpFechaRegistro.ValueChanged += new System.EventHandler(this.dtpFechaRegistro_ValueChanged);
+
             // 
             // label5
             // 
@@ -213,7 +213,7 @@
             this.label5.Size = new System.Drawing.Size(154, 20);
             this.label5.TabIndex = 21;
             this.label5.Text = "Fecha de inscripción";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            
             // 
             // label6
             // 
