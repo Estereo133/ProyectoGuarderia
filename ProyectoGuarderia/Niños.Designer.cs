@@ -41,23 +41,26 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(743, 397);
+            this.btnSalir.BackColor = System.Drawing.Color.Red;
+            this.btnSalir.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(749, 410);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(106, 43);
+            this.btnSalir.Size = new System.Drawing.Size(62, 30);
             this.btnSalir.TabIndex = 0;
             this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnAgregarNiño
             // 
-            this.btnAgregarNiño.Location = new System.Drawing.Point(595, 397);
+            this.btnAgregarNiño.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnAgregarNiño.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarNiño.Location = new System.Drawing.Point(638, 410);
             this.btnAgregarNiño.Name = "btnAgregarNiño";
-            this.btnAgregarNiño.Size = new System.Drawing.Size(142, 43);
+            this.btnAgregarNiño.Size = new System.Drawing.Size(99, 30);
             this.btnAgregarNiño.TabIndex = 7;
             this.btnAgregarNiño.Text = "Agregar Niño";
-            this.btnAgregarNiño.UseVisualStyleBackColor = true;
+            this.btnAgregarNiño.UseVisualStyleBackColor = false;
             this.btnAgregarNiño.Click += new System.EventHandler(this.btnAgregarNiño_Click);
             // 
             // dgvNinos
@@ -73,10 +76,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(151, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(437, 37);
+            this.label1.Size = new System.Drawing.Size(425, 43);
             this.label1.TabIndex = 10;
             this.label1.Text = "Niños actualmente inscritos";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -94,18 +97,20 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(469, 397);
+            this.button1.BackColor = System.Drawing.Color.Aquamarine;
+            this.button1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(549, 410);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 43);
+            this.button1.Size = new System.Drawing.Size(73, 30);
             this.button1.TabIndex = 11;
             this.button1.Text = "Todo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form_Niños
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(888, 464);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);

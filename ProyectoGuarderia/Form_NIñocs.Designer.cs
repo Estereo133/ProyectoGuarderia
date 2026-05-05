@@ -58,7 +58,8 @@
             // 
             // btnAgregarPadre
             // 
-            this.btnAgregarPadre.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAgregarPadre.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnAgregarPadre.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarPadre.Location = new System.Drawing.Point(637, 298);
             this.btnAgregarPadre.Name = "btnAgregarPadre";
             this.btnAgregarPadre.Size = new System.Drawing.Size(167, 42);
@@ -94,30 +95,34 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Window;
+            this.label1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(46, 75);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(54, 20);
             this.label1.TabIndex = 10;
             this.label1.Text = "Nombre";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.Window;
+            this.label2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(46, 152);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.Size = new System.Drawing.Size(58, 20);
             this.label2.TabIndex = 11;
             this.label2.Text = "Apaterno";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.Window;
+            this.label3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(46, 230);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(62, 20);
             this.label3.TabIndex = 12;
             this.label3.Text = "Amaterno";
             // 
@@ -136,18 +141,19 @@
             this.cmbSexo.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
-            this.cmbSexo.Location = new System.Drawing.Point(350, 260);
+            this.cmbSexo.Location = new System.Drawing.Point(321, 261);
             this.cmbSexo.Name = "cmbSexo";
-            this.cmbSexo.Size = new System.Drawing.Size(121, 21);
+            this.cmbSexo.Size = new System.Drawing.Size(161, 21);
             this.cmbSexo.TabIndex = 14;
             // 
             // btnGuardar
             // 
             this.btnGuardar.AutoSize = true;
             this.btnGuardar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnGuardar.Location = new System.Drawing.Point(657, 446);
+            this.btnGuardar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(637, 446);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(78, 30);
+            this.btnGuardar.Size = new System.Drawing.Size(87, 30);
             this.btnGuardar.TabIndex = 15;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -156,9 +162,10 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Red;
-            this.btnCancelar.Location = new System.Drawing.Point(749, 446);
+            this.btnCancelar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(730, 446);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(76, 30);
+            this.btnCancelar.Size = new System.Drawing.Size(84, 30);
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -176,10 +183,11 @@
             // 
             // btnSeleccionarFoto
             // 
-            this.btnSeleccionarFoto.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSeleccionarFoto.Location = new System.Drawing.Point(666, 230);
+            this.btnSeleccionarFoto.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnSeleccionarFoto.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionarFoto.Location = new System.Drawing.Point(666, 214);
             this.btnSeleccionarFoto.Name = "btnSeleccionarFoto";
-            this.btnSeleccionarFoto.Size = new System.Drawing.Size(100, 23);
+            this.btnSeleccionarFoto.Size = new System.Drawing.Size(109, 36);
             this.btnSeleccionarFoto.TabIndex = 18;
             this.btnSeleccionarFoto.Text = "Agregar foto";
             this.btnSeleccionarFoto.UseVisualStyleBackColor = false;
@@ -188,9 +196,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(46, 313);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 13);
+            this.label4.Size = new System.Drawing.Size(129, 20);
             this.label4.TabIndex = 19;
             this.label4.Text = "Fecha de Nacimiento";
             // 
@@ -205,18 +214,20 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(347, 356);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 13);
+            this.label5.Size = new System.Drawing.Size(126, 20);
             this.label5.TabIndex = 21;
             this.label5.Text = "Fecha de inscripción";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(347, 235);
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(377, 230);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.Size = new System.Drawing.Size(51, 20);
             this.label6.TabIndex = 22;
             this.label6.Text = "Genero";
             // 
@@ -242,7 +253,8 @@
             // 
             // btnAgTutor
             // 
-            this.btnAgTutor.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAgTutor.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnAgTutor.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgTutor.Location = new System.Drawing.Point(637, 356);
             this.btnAgTutor.Name = "btnAgTutor";
             this.btnAgTutor.Size = new System.Drawing.Size(167, 42);
@@ -261,10 +273,10 @@
             // lblCurp
             // 
             this.lblCurp.AutoSize = true;
-            this.lblCurp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurp.Location = new System.Drawing.Point(38, 393);
+            this.lblCurp.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurp.Location = new System.Drawing.Point(46, 378);
             this.lblCurp.Name = "lblCurp";
-            this.lblCurp.Size = new System.Drawing.Size(50, 17);
+            this.lblCurp.Size = new System.Drawing.Size(47, 20);
             this.lblCurp.TabIndex = 27;
             this.lblCurp.Text = "CURP:";
             // 
@@ -272,7 +284,7 @@
             // 
             this.txtCurp.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtCurp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCurp.Location = new System.Drawing.Point(117, 393);
+            this.txtCurp.Location = new System.Drawing.Point(37, 416);
             this.txtCurp.Name = "txtCurp";
             this.txtCurp.Size = new System.Drawing.Size(190, 23);
             this.txtCurp.TabIndex = 28;
@@ -281,7 +293,7 @@
             // Form_Niño
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(850, 491);
             this.ControlBox = false;
             this.Controls.Add(this.txtCurp);

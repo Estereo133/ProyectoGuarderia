@@ -169,5 +169,10 @@ namespace ProyectoGuarderia
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void txtBuscarPadre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

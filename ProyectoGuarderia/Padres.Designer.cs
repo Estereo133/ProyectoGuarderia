@@ -32,7 +32,6 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvPadres = new System.Windows.Forms.DataGridView();
-            this.lblBuscarPadre = new System.Windows.Forms.Label();
             this.txtBuscarPadre = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAgregarPadre = new System.Windows.Forms.Button();
@@ -55,18 +54,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(78, 27);
+            this.label1.Location = new System.Drawing.Point(318, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(465, 55);
+            this.label1.Size = new System.Drawing.Size(327, 41);
             this.label1.TabIndex = 2;
             this.label1.Text = "Padres Registrados";
             // 
             // dgvPadres
             // 
             this.dgvPadres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPadres.Location = new System.Drawing.Point(26, 187);
+            this.dgvPadres.Location = new System.Drawing.Point(169, 201);
             this.dgvPadres.Name = "dgvPadres";
             this.dgvPadres.RowHeadersWidth = 62;
             this.dgvPadres.Size = new System.Drawing.Size(606, 229);
@@ -74,77 +73,71 @@
             this.dgvPadres.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPadres_CellContentClick);
             this.dgvPadres.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPadres_CellDoubleClick);
             // 
-            // lblBuscarPadre
-            // 
-            this.lblBuscarPadre.AutoSize = true;
-            this.lblBuscarPadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscarPadre.Location = new System.Drawing.Point(34, 134);
-            this.lblBuscarPadre.Name = "lblBuscarPadre";
-            this.lblBuscarPadre.Size = new System.Drawing.Size(158, 29);
-            this.lblBuscarPadre.TabIndex = 5;
-            this.lblBuscarPadre.Text = "BuscarPadre:";
-            // 
             // txtBuscarPadre
             // 
             this.txtBuscarPadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarPadre.Location = new System.Drawing.Point(198, 131);
+            this.txtBuscarPadre.Location = new System.Drawing.Point(334, 96);
             this.txtBuscarPadre.Name = "txtBuscarPadre";
-            this.txtBuscarPadre.Size = new System.Drawing.Size(282, 35);
+            this.txtBuscarPadre.Size = new System.Drawing.Size(282, 26);
             this.txtBuscarPadre.TabIndex = 6;
+            this.txtBuscarPadre.TextChanged += new System.EventHandler(this.txtBuscarPadre_TextChanged);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(486, 127);
+            this.btnBuscar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnBuscar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(411, 149);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(129, 42);
+            this.btnBuscar.Size = new System.Drawing.Size(102, 36);
             this.btnBuscar.TabIndex = 7;
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnAgregarPadre
             // 
-            this.btnAgregarPadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarPadre.Location = new System.Drawing.Point(51, 458);
+            this.btnAgregarPadre.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnAgregarPadre.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarPadre.Location = new System.Drawing.Point(376, 468);
             this.btnAgregarPadre.Name = "btnAgregarPadre";
-            this.btnAgregarPadre.Size = new System.Drawing.Size(215, 51);
+            this.btnAgregarPadre.Size = new System.Drawing.Size(124, 29);
             this.btnAgregarPadre.TabIndex = 8;
             this.btnAgregarPadre.Text = "Agregar Padre";
-            this.btnAgregarPadre.UseVisualStyleBackColor = true;
+            this.btnAgregarPadre.UseVisualStyleBackColor = false;
             this.btnAgregarPadre.Click += new System.EventHandler(this.btnAgregarPadre_Click_1);
             // 
             // btnEditar
             // 
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(324, 459);
+            this.btnEditar.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnEditar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(549, 468);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(130, 51);
+            this.btnEditar.Size = new System.Drawing.Size(96, 31);
             this.btnEditar.TabIndex = 9;
             this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.UseVisualStyleBackColor = false;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(486, 458);
+            this.btnEliminar.BackColor = System.Drawing.Color.Red;
+            this.btnEliminar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(729, 468);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(130, 51);
+            this.btnEliminar.Size = new System.Drawing.Size(104, 31);
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // Form_Padres
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(925, 616);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregarPadre);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscarPadre);
-            this.Controls.Add(this.lblBuscarPadre);
             this.Controls.Add(this.dgvPadres);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSalir);
@@ -164,7 +157,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvPadres;
-        private System.Windows.Forms.Label lblBuscarPadre;
         private System.Windows.Forms.TextBox txtBuscarPadre;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnAgregarPadre;

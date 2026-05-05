@@ -251,5 +251,10 @@ namespace ProyectoGuarderia
             pictureBoxFoto.Image = null;
             cmbSexo.SelectedIndex = -1;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
