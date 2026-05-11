@@ -28,11 +28,11 @@ namespace ProyectoGuarderia
 
         private void Inf_comNIno_Load(object sender, EventArgs e)
         {
-            labNom.Text = nombre;
-            labeApa.Text = apaterno;
-            labAma.Text = amaterno;
-            lafecha.Text = fecha;
-            labeGenero.Text = sexo;
+            //labNom.Text = nombre;
+            //labeApa.Text = apaterno;
+            //labAma.Text = amaterno;
+            //lafecha.Text = fecha;
+            //labeGenero.Text = sexo;
 
             if (File.Exists(foto))
             {
@@ -51,6 +51,31 @@ namespace ProyectoGuarderia
         }
 
         private void labAma_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelNomb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

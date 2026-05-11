@@ -111,9 +111,9 @@
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(46, 152);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 20);
+            this.label2.Size = new System.Drawing.Size(99, 20);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Apaterno";
+            this.label2.Text = "Apellido Paterno";
             // 
             // label3
             // 
@@ -122,9 +122,9 @@
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(46, 230);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 20);
+            this.label3.Size = new System.Drawing.Size(102, 20);
             this.label3.TabIndex = 12;
-            this.label3.Text = "Amaterno";
+            this.label3.Text = "Apellido Materno";
             // 
             // dtpFechaNacimiento
             // 
@@ -276,9 +276,9 @@
             this.lblCurp.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurp.Location = new System.Drawing.Point(46, 378);
             this.lblCurp.Name = "lblCurp";
-            this.lblCurp.Size = new System.Drawing.Size(47, 20);
+            this.lblCurp.Size = new System.Drawing.Size(39, 20);
             this.lblCurp.TabIndex = 27;
-            this.lblCurp.Text = "CURP:";
+            this.lblCurp.Text = "Curp:";
             // 
             // txtCurp
             // 

@@ -361,5 +361,10 @@ namespace ProyectoGuarderia
                 camara.WaitForStop();
             }
         }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

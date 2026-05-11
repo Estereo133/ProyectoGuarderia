@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Tutores));
             this.label1 = new System.Windows.Forms.Label();
             this.picBoxImage = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -198,6 +199,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.picBoxImage);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_Tutores";
             this.Text = "Tutores";
