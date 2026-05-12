@@ -65,10 +65,10 @@
             // dgvPadres
             // 
             this.dgvPadres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPadres.Location = new System.Drawing.Point(169, 201);
+            this.dgvPadres.Location = new System.Drawing.Point(237, 207);
             this.dgvPadres.Name = "dgvPadres";
             this.dgvPadres.RowHeadersWidth = 62;
-            this.dgvPadres.Size = new System.Drawing.Size(606, 229);
+            this.dgvPadres.Size = new System.Drawing.Size(466, 197);
             this.dgvPadres.TabIndex = 3;
             this.dgvPadres.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPadres_CellContentClick);
             this.dgvPadres.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPadres_CellDoubleClick);

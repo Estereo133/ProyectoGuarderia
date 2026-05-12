@@ -9,9 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using MySql.Data.MySqlClient;
-
-
-
+using Microsoft.VisualBasic.FileIO;
 
 namespace ProyectoGuarderia
 {
@@ -71,9 +69,12 @@ OR n.Apaterno LIKE @buscar
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
 
-                    cmd.Parameters.AddWithValue("@buscar", "%" + txtBuscar.Text + "%");
+                    cmd.Parameters.AddWithValue(
+                    "@buscar",
+                    "%" + txtBuscar.Text + "%");
 
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    MySqlDataAdapter adapter =
+                    new MySqlDataAdapter(cmd);
 
                     DataTable dt = new DataTable();
 
@@ -81,16 +82,18 @@ OR n.Apaterno LIKE @buscar
 
                     if (dt.Rows.Count > 0)
                     {
-                        // Crear nueva tabla vertical
+                        // TABLA VERTICAL
                         DataTable dtVertical = new DataTable();
+
                         dtVertical.Columns.Add("Campo");
+
                         dtVertical.Columns.Add("Valor");
 
-                        DataRow fila = dt.Rows[0]; // Tomamos solo el primer resultado
+                        DataRow fila = dt.Rows[0];
 
                         foreach (DataColumn col in dt.Columns)
                         {
-                            // No mostrar las columnas de imagen
+                            // NO MOSTRAR IMÁGENES
                             if (col.ColumnName != "Foto" &&
                                 col.ColumnName != "ImagenPadre")
                             {
@@ -103,30 +106,112 @@ OR n.Apaterno LIKE @buscar
 
                         dgvResultado.DataSource = dtVertical;
 
-                        // 🔹 MOSTRAR IMÁGENES
-                        string rutaNino = fila["Foto"]?.ToString();
-                        if (!string.IsNullOrEmpty(rutaNino) && File.Exists(rutaNino))
-                            pictureBoxFoto.Image = Image.FromFile(rutaNino);
-                        else
-                            pictureBoxFoto.Image = null;
+                        // FOTO NIÑO
+                        string rutaNino =
+                        fila["Foto"]?.ToString();
 
-                        string rutaPadre = fila["ImagenPadre"]?.ToString();
-                        if (!string.IsNullOrEmpty(rutaPadre) && File.Exists(rutaPadre))
-                            pictureBoxPadre.Image = Image.FromFile(rutaPadre);
+                        if (!string.IsNullOrEmpty(rutaNino) &&
+                            File.Exists(rutaNino))
+                        {
+                            pictureBoxFoto.Image =
+                            Image.FromFile(rutaNino);
+                        }
                         else
+                        {
+                            pictureBoxFoto.Image = null;
+                        }
+
+                        // FOTO PADRE
+                        string rutaPadre =
+                        fila["ImagenPadre"]?.ToString();
+
+                        if (!string.IsNullOrEmpty(rutaPadre) &&
+                            File.Exists(rutaPadre))
+                        {
+                            pictureBoxPadre.Image =
+                            Image.FromFile(rutaPadre);
+                        }
+                        else
+                        {
                             pictureBoxPadre.Image = null;
+                        }
                     }
                     else
                     {
                         dgvResultado.DataSource = null;
+
                         pictureBoxFoto.Image = null;
+
                         pictureBoxPadre.Image = null;
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show(
+                "Error: " + ex.Message);
+            }
+        }
+
+        // =========================
+        // CARGAR CSV
+        // =========================
+        private void CargarCSV(string rutaArchivo)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+
+                using (TextFieldParser parser =
+                new TextFieldParser(rutaArchivo))
+                {
+                    parser.TextFieldType =
+                    FieldType.Delimited;
+
+                    parser.SetDelimiters(",");
+
+                    parser.HasFieldsEnclosedInQuotes = true;
+
+                    // LEER ENCABEZADOS
+                    string[] columnas =
+                    parser.ReadFields();
+
+                    foreach (string col in columnas)
+                    {
+                        dt.Columns.Add(col);
+                    }
+
+                    // LEER FILAS
+                    while (!parser.EndOfData)
+                    {
+                        string[] fila =
+                        parser.ReadFields();
+
+                        dt.Rows.Add(fila);
+                    }
+                }
+
+                dgvResultado.DataSource = dt;
+
+                // ESTILO GRID
+                dgvResultado.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+                dgvResultado.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+
+                dgvResultado.RowHeadersVisible = false;
+
+                dgvResultado.DefaultCellStyle.Font =
+                new Font("Segoe UI", 10);
+
+                dgvResultado.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI", 10, FontStyle.Bold);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                "Error al cargar CSV: " + ex.Message);
             }
         }
 
@@ -136,7 +221,8 @@ OR n.Apaterno LIKE @buscar
             {
                 if (dgvResultado.CurrentRow != null)
                 {
-                    var valor = dgvResultado.CurrentRow.Cells["Foto"].Value;
+                    var valor =
+                    dgvResultado.CurrentRow.Cells["Foto"].Value;
 
                     if (valor != null)
                     {
@@ -144,7 +230,8 @@ OR n.Apaterno LIKE @buscar
 
                         if (File.Exists(ruta))
                         {
-                            pictureBoxFoto.Image = Image.FromFile(ruta);
+                            pictureBoxFoto.Image =
+                            Image.FromFile(ruta);
                         }
                         else
                         {
@@ -174,7 +261,9 @@ OR n.Apaterno LIKE @buscar
                     if (dgvResultado.Columns.Contains("Foto"))
                     {
                         string ruta =
-                        dgvResultado.CurrentRow.Cells["Foto"].Value?.ToString();
+                        dgvResultado.CurrentRow
+                        .Cells["Foto"]
+                        .Value?.ToString();
 
                         if (!string.IsNullOrEmpty(ruta) &&
                             File.Exists(ruta))
@@ -192,7 +281,9 @@ OR n.Apaterno LIKE @buscar
                     if (dgvResultado.Columns.Contains("ImagenPadre"))
                     {
                         string rutaPadre =
-                        dgvResultado.CurrentRow.Cells["ImagenPadre"].Value?.ToString();
+                        dgvResultado.CurrentRow
+                        .Cells["ImagenPadre"]
+                        .Value?.ToString();
 
                         if (!string.IsNullOrEmpty(rutaPadre) &&
                             File.Exists(rutaPadre))
@@ -210,6 +301,7 @@ OR n.Apaterno LIKE @buscar
             catch
             {
                 pictureBoxFoto.Image = null;
+
                 pictureBoxPadre.Image = null;
             }
         }
@@ -219,9 +311,43 @@ OR n.Apaterno LIKE @buscar
 
         }
 
+        // =========================
+        // BOTÓN BUSCAR
+        // =========================
         private void btnBuscar_Click_1(object sender, EventArgs e)
         {
-            Buscar();
+            DialogResult r = MessageBox.Show(
+
+            "¿Desea buscar en Base de Datos?\n\n" +
+            "SÍ = Base de Datos\n" +
+            "NO = Archivo CSV",
+
+            "Tipo de búsqueda",
+
+            MessageBoxButtons.YesNoCancel,
+            MessageBoxIcon.Question);
+
+            // BASE DE DATOS
+            if (r == DialogResult.Yes)
+            {
+                Buscar();
+            }
+
+            // CSV
+            else if (r == DialogResult.No)
+            {
+                OpenFileDialog ofd =
+                new OpenFileDialog();
+
+                ofd.Filter =
+                "Archivos CSV (*.csv)|*.csv";
+
+                if (ofd.ShowDialog() ==
+                    DialogResult.OK)
+                {
+                    CargarCSV(ofd.FileName);
+                }
+            }
         }
     }
 }
