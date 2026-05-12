@@ -293,8 +293,9 @@
             // Form_Niño
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(850, 491);
+            this.ClientSize = new System.Drawing.Size(864, 491);
             this.ControlBox = false;
             this.Controls.Add(this.txtCurp);
             this.Controls.Add(this.lblCurp);
@@ -319,6 +320,8 @@
             this.Controls.Add(this.txtApaterno);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.btnAgregarPadre);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Niño";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

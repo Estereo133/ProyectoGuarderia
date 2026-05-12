@@ -50,12 +50,6 @@ namespace ProyectoGuarderia
             this.Show();
         }
 
-
-        private void panelApp_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnTutores_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -74,7 +68,17 @@ namespace ProyectoGuarderia
 
         private void btnAyuda_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult resultado = MessageBox.Show(
+                "¿Está seguro de salir de la aplicación?",
+                "Confirmar salida",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (resultado == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void btnPagos_Click(object sender, EventArgs e)
@@ -88,21 +92,28 @@ namespace ProyectoGuarderia
             }
             this.Show();
         }
-
-        private void Form_Menu_Load(object sender, EventArgs e)
+        private void btnAyuda_MouseLeave(object sender, EventArgs e)
         {
-
+            if (btnAyuda.BackColor == Color.Red)
+            {
+                btnAyuda.BackColor = Color.Cyan;
+            }
         }
 
+        private void btnAyuda_MouseEnter(object sender, EventArgs e)
+        {
+            if (btnAyuda.BackColor != Color.Red)
+            {
+                btnAyuda.BackColor = Color.Red;
+            }
+        }
         private void btnEmergencia_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            using (var formNiños = new Emergencias_Num())
-            {
-                formNiños.ShowDialog();
-            }
-            this.Show();
+            Emergencias_Num ventana = new Emergencias_Num();
+            ventana.Show();
         }
+
+        //end
     }
     }
 

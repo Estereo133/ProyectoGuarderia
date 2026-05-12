@@ -118,7 +118,7 @@
             this.Controls.Add(this.dgvNinos);
             this.Controls.Add(this.btnAgregarNiño);
             this.Controls.Add(this.btnSalir);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Niños";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

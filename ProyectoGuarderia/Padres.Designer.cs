@@ -141,6 +141,7 @@
             this.Controls.Add(this.dgvPadres);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSalir);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Padres";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
