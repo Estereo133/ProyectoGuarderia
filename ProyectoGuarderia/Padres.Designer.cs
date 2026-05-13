@@ -43,7 +43,7 @@
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(736, 561);
+            this.btnSalir.Location = new System.Drawing.Point(367, 505);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(97, 43);
             this.btnSalir.TabIndex = 1;
@@ -54,21 +54,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(318, 20);
+            this.label1.Location = new System.Drawing.Point(12, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(327, 41);
+            this.label1.Size = new System.Drawing.Size(239, 33);
             this.label1.TabIndex = 2;
             this.label1.Text = "Padres Registrados";
             // 
             // dgvPadres
             // 
+            this.dgvPadres.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPadres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPadres.Location = new System.Drawing.Point(237, 207);
+            this.dgvPadres.Location = new System.Drawing.Point(12, 117);
             this.dgvPadres.Name = "dgvPadres";
             this.dgvPadres.RowHeadersWidth = 62;
-            this.dgvPadres.Size = new System.Drawing.Size(466, 197);
+            this.dgvPadres.Size = new System.Drawing.Size(864, 256);
             this.dgvPadres.TabIndex = 3;
             this.dgvPadres.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPadres_CellContentClick);
             this.dgvPadres.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPadres_CellDoubleClick);
@@ -76,19 +77,21 @@
             // txtBuscarPadre
             // 
             this.txtBuscarPadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarPadre.Location = new System.Drawing.Point(334, 96);
+            this.txtBuscarPadre.Location = new System.Drawing.Point(594, 82);
             this.txtBuscarPadre.Name = "txtBuscarPadre";
-            this.txtBuscarPadre.Size = new System.Drawing.Size(282, 26);
+            this.txtBuscarPadre.Size = new System.Drawing.Size(194, 26);
             this.txtBuscarPadre.TabIndex = 6;
             this.txtBuscarPadre.TextChanged += new System.EventHandler(this.txtBuscarPadre_TextChanged);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(411, 149);
+            this.btnBuscar.Location = new System.Drawing.Point(794, 80);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(102, 36);
+            this.btnBuscar.Size = new System.Drawing.Size(82, 29);
             this.btnBuscar.TabIndex = 7;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -96,11 +99,12 @@
             // 
             // btnAgregarPadre
             // 
-            this.btnAgregarPadre.BackColor = System.Drawing.Color.Aquamarine;
-            this.btnAgregarPadre.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarPadre.Location = new System.Drawing.Point(376, 468);
+            this.btnAgregarPadre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAgregarPadre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarPadre.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarPadre.Location = new System.Drawing.Point(540, 379);
             this.btnAgregarPadre.Name = "btnAgregarPadre";
-            this.btnAgregarPadre.Size = new System.Drawing.Size(124, 29);
+            this.btnAgregarPadre.Size = new System.Drawing.Size(124, 31);
             this.btnAgregarPadre.TabIndex = 8;
             this.btnAgregarPadre.Text = "Agregar Padre";
             this.btnAgregarPadre.UseVisualStyleBackColor = false;
@@ -108,9 +112,10 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.Aquamarine;
-            this.btnEditar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(549, 468);
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(670, 379);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(96, 31);
             this.btnEditar.TabIndex = 9;
@@ -120,8 +125,11 @@
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Red;
-            this.btnEliminar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(729, 468);
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEliminar.Location = new System.Drawing.Point(772, 379);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(104, 31);
             this.btnEliminar.TabIndex = 10;
@@ -132,7 +140,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(925, 616);
+            this.ClientSize = new System.Drawing.Size(888, 464);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregarPadre);

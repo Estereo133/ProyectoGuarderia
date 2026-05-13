@@ -248,5 +248,11 @@ namespace ProyectoGuarderia
         {
             this.Close();
         }
-    }
+
+        private void tutoresTablas_Load_1(object sender, EventArgs e)
+        {
+            CargarDatos();
+        }
+
+    }//end 
 }

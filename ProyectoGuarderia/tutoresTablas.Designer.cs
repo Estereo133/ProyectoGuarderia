@@ -43,6 +43,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(570, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(204, 145);
@@ -65,8 +66,11 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(713, 384);
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Window;
+            this.button1.Location = new System.Drawing.Point(699, 355);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 38);
             this.button1.TabIndex = 3;
@@ -76,9 +80,9 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Aquamarine;
-            this.button2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(607, 384);
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.button2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(611, 355);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(82, 38);
             this.button2.TabIndex = 4;
@@ -89,18 +93,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(262, 12);
+            this.label1.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(39, 104);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 43);
+            this.label1.Size = new System.Drawing.Size(153, 44);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tutores";
             // 
             // buttEleminar
             // 
-            this.buttEleminar.BackColor = System.Drawing.Color.Aquamarine;
-            this.buttEleminar.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttEleminar.Location = new System.Drawing.Point(491, 384);
+            this.buttEleminar.BackColor = System.Drawing.Color.Red;
+            this.buttEleminar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttEleminar.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.buttEleminar.Location = new System.Drawing.Point(519, 355);
             this.buttEleminar.Name = "buttEleminar";
             this.buttEleminar.Size = new System.Drawing.Size(86, 38);
             this.buttEleminar.TabIndex = 6;
@@ -110,9 +115,9 @@
             // 
             // butedit
             // 
-            this.butedit.BackColor = System.Drawing.Color.Aquamarine;
-            this.butedit.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butedit.Location = new System.Drawing.Point(378, 384);
+            this.butedit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.butedit.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butedit.Location = new System.Drawing.Point(441, 355);
             this.butedit.Name = "butedit";
             this.butedit.Size = new System.Drawing.Size(75, 38);
             this.butedit.TabIndex = 7;
@@ -122,7 +127,7 @@
             // 
             // texbuscar
             // 
-            this.texbuscar.Location = new System.Drawing.Point(205, 104);
+            this.texbuscar.Location = new System.Drawing.Point(245, 125);
             this.texbuscar.Name = "texbuscar";
             this.texbuscar.Size = new System.Drawing.Size(271, 20);
             this.texbuscar.TabIndex = 8;
@@ -146,6 +151,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "tutoresTablas";
             this.Text = "tutoresTablas";
+            this.Load += new System.EventHandler(this.tutoresTablas_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
